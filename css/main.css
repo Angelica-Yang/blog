@@ -6428,7 +6428,7 @@ details.toc[open] >div.body section .header+.doc_tree {
   --blur-px: 100px;
   --brightness: 100%;
   --inset: 32px;
-  background-image: url("https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.13/image/sidebar-bg1@small.jpg");
+  background-image: https;
   filter: saturate(var(--saturate)) brightness(var(--brightness)) blur(var(--blur-px));
 }
 @media screen and (prefers-color-scheme: dark) {
