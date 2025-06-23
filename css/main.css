@@ -6425,15 +6425,15 @@ details.toc[open] >div.body section .header+.doc_tree {
   background-size: cover;
   border-radius: 24px;
   --saturate: 300%;
-  --blur-px: 100px;
+  --blur-px: 0px;
   --brightness: 100%;
   --inset: 32px;
-  background-image: https;
+  background-image: url("https://angelica-yang.github.io/blog/pictures/leftbarbg.png");
   filter: saturate(var(--saturate)) brightness(var(--brightness)) blur(var(--blur-px));
 }
 @media screen and (prefers-color-scheme: dark) {
   .l_left .sidebg {
-    --blur-px: calc(100px * 0.75);
+    --blur-px: calc(0px * 0.75);
     --saturate: 200%;
     --brightness: 75%;
   }
