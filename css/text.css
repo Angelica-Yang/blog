@@ -1,9 +1,31 @@
-/* 通用文字颜色 */
-body {
-  color: #fff !important;
+
+/* 为Hexo博客文章添加半透明白色背景板 */
+.article {
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  
+  background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    z-index: -1;
+  }
+  
 }
 
-/* 针对特定元素（示例） */
-.post-body, .article-content, .post-title {
-  color: #fff !important;
+.article-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* 适配不同主题的响应式设计 */
+@media (max-width: 768px) {
+  .article {
+    padding: 1rem;
+  }
 }

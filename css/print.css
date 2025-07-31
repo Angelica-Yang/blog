@@ -101,7 +101,7 @@
     position: relative;
   }
   body::after {
-    content: "AY written";
+    content: "杨宁之";
     position: fixed;
     top: 0;
     left: 0;
