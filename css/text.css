@@ -1,0 +1,9 @@
+/* 通用文字颜色 */
+body {
+  color: #fff !important;
+}
+
+/* 针对特定元素（示例） */
+.post-body, .article-content, .post-title {
+  color: #fff !important;
+}

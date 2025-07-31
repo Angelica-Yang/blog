@@ -1,0 +1,124 @@
+@media print {
+  /* 隐藏元素 */
+  .l_left,
+  .l_right,
+  .top.bread-nav.footnote,
+  div#read-next,
+  div#post-ai,
+  div#related-posts,
+  div#comments,
+  section#license,
+  section#share,
+  #link-icon,
+  footer {
+    display: none;
+  }
+  .md-text psw {
+    color: unset;
+    background: unset;
+    border: 3px dashed var(--block-border);
+  }
+  /* 隐藏锚点 */
+  .markdownIt-Anchor {
+    display: none; /* 隐藏原始链接内容 */
+  }
+  /* 修改背景和边框 */
+  .article.banner {
+    background: none;
+    border-bottom: 1px dashed var(--block-border);
+  }
+
+  /* 调整边框圆角和内边距 */
+  .banner,
+  .banner.top {
+    border-radius: 0;
+  }
+
+  .banner .bottom,
+  table {
+    padding: 0rem;
+  }
+
+  /* 取消grid布局 */
+  #start {
+    display: unset;
+  }
+  /* 调整字的上下边距 */
+  p {
+    margin: 0 !important;
+  }
+  /* 调整标题的上外边距 */
+  h1,h2,h3,h4,h5, h6 {
+    margin: 0 !important;
+  }
+
+  /* 限制图片高度 */
+  img {
+    max-height: 100vh;
+  }
+  .md-text {
+    max-width: 100%;
+    line-height:unset;
+  }
+  /* 修改link */
+  a:not([href^='#'])::after {
+    content: ' (' attr(href) ')';
+    font-size: 80%;
+    color: var(--color-fg-muted);
+  }
+
+  /* 修改公式间距 */
+  /* 针对行内公式设置垂直间距 */
+  .math.inline, .katex-inline {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    vertical-align: middle !important;
+  }
+  
+  /* 针对块级公式设置上下间距 */
+  .math.display, .katex-display {
+    margin: 0px !important; /* 上下各1em间距 */
+    padding: 0px !important;
+    page-break-inside: avoid !important; /* 防止公式跨页分割 */
+  }
+
+  /* 防止公式被压缩 */
+  .katex {
+    font-size: inherit !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 公式包裹容器 - 添加额外间距 
+  .equation, [data-equation] {
+    margin-top: 0em !important;
+    margin-bottom: 0em !important;
+  }
+  */
+
+
+/* 通过伪元素+固定定位实现防移除水印 */
+  body {
+    position: relative;
+  }
+  body::after {
+    content: "AY written";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    color:rgba(0,0,0,0.1);
+    transform: rotate(-30deg);
+    pointer-events: none;
+    z-index: 9999;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  }
+}
+
+
