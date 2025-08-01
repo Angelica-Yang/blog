@@ -101,7 +101,7 @@
     position: relative;
   }
   body::after {
-    content: "杨宁之";
+    content: "杨    宁    之";
     position: fixed;
     top: 0;
     left: 0;
