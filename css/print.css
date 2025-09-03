@@ -102,11 +102,13 @@
 
 
 /* 通过伪元素+固定定位实现防移除水印 */
+
+/*
   body {
     position: relative;
   }
   body::after {
-    content: "AstroYouth ";
+    content: "杨      宁      之";
     position: fixed;
     top: 0;
     left: 0;
@@ -115,7 +117,7 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
-    font-size: 80px;
+    font-size: 100px;
     color:rgba(0,0,0,0.1);
     transform: rotate(-30deg);
     pointer-events: none;
@@ -124,6 +126,5 @@
     print-color-adjust: exact;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   }
+  */
 }
-
-
