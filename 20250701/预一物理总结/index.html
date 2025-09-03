@@ -1,0 +1,2621 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>物理总结 - Angelica Yang</title>
+
+  
+    <meta name="description" content="力学 定义：物理学中研究宏观物体低速机械运动规律的部分。 宏观：不涉及量子效应。 低速：不涉及相对论效应。  经典力学的局限性 根据力学（经典力学）的定义可得它的局限性：  速度限制：高速领域失效。 尺观限制：微观世界不适用。 引力场限制：强引力场作用下失效。  质点运动学 位矢： $ \vec{r} $ 位移： $ s &#x3D; \Delta \vec{r} &#x3D; \Delta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物理总结">
+<meta property="og:url" content="https://blog.astroyouth.cn/20250701/%E9%A2%84%E4%B8%80%E7%89%A9%E7%90%86%E6%80%BB%E7%BB%93/">
+<meta property="og:site_name" content="Angelica Yang">
+<meta property="og:description" content="力学 定义：物理学中研究宏观物体低速机械运动规律的部分。 宏观：不涉及量子效应。 低速：不涉及相对论效应。  经典力学的局限性 根据力学（经典力学）的定义可得它的局限性：  速度限制：高速领域失效。 尺观限制：微观世界不适用。 引力场限制：强引力场作用下失效。  质点运动学 位矢： $ \vec{r} $ 位移： $ s &#x3D; \Delta \vec{r} &#x3D; \Delta">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://angelica-yang.github.io/blog/pictures/logo.jpeg">
+<meta property="article:published_time" content="2025-07-01T01:27:39.000Z">
+<meta property="article:modified_time" content="2025-09-03T07:21:39.513Z">
+<meta property="article:author" content="Angelica Yang">
+<meta property="article:tag" content="物理总结">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://angelica-yang.github.io/blog/pictures/logo.jpeg">
+  
+  
+  
+  <meta name="keywords" content="物理总结">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="https://angelica-yang.github.io/blog/pictures/favicon.png">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Angelica Yang","sameAs":[],"image":"https://angelica-yang.github.io/blog/pictures/logo.jpeg"},"dateCreated":"2025-07-01T09:27:39+08:00","dateModified":"2025-09-03T15:21:39+08:00","datePublished":"2025-07-01T09:27:39+08:00","description":"","headline":"物理总结","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.astroyouth.cn/20250701/%E9%A2%84%E4%B8%80%E7%89%A9%E7%90%86%E6%80%BB%E7%BB%93/"},"publisher":{"@type":"Organization","name":"Angelica Yang","sameAs":[],"image":"https://angelica-yang.github.io/blog/pictures/logo.jpeg","logo":{"@type":"ImageObject","url":"https://angelica-yang.github.io/blog/pictures/logo.jpeg"}},"url":"https://blog.astroyouth.cn/20250701/%E9%A2%84%E4%B8%80%E7%89%A9%E7%90%86%E6%80%BB%E7%BB%93/","keywords":"物理总结","image":[]}</script>
+  <link rel="stylesheet" href="/css/print.css"><link rel="stylesheet" href="/css/copied.css">
+</head>
+<body><div class="sitebg"><div class="siteblur"></div></div>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://angelica-yang.github.io/blog/pictures/logo.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">Angelica Yang</div><div class="sub normal cap">Pain is inevitable.</div><div class="sub hover cap" style="opacity:0"> Suffering is optional.</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="主页" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="社交" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/20250701/%E9%A2%84%E4%B8%80%E7%89%A9%E7%90%86%E6%80%BB%E7%BB%93/"><span class="title">物理总结</span></a><a class="item title" href="/20250626/try-MarkDown/"><span class="title">常用语法</span></a><a class="item title" href="/20250902/notice/"><span class="title">公告</span></a><a class="item title" href="/20250613/article/"><span class="title">Article</span></a><a class="item title" href="/20250626/newuser/"><span class="title">新用户必读</span></a><a class="item title" href="/20250806/%E7%89%A9%E7%90%86%E7%83%AD%E5%AD%A6%E7%BA%A0%E9%94%99/"><span class="title">高中物理热学纠错</span></a><a class="item title" href="/20250806/%E5%8A%BF%E8%83%BD%E4%B8%93%E9%A2%98/"><span class="title">势能</span></a><a class="item title" href="/20250702/%E9%9A%90%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%E4%B8%93%E9%A2%98/"><span class="title">隐函数的导数运算</span></a><a class="item title" href="/20250702/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E4%B8%93%E9%A2%98/"><span class="title">三角函数专题</span></a><a class="item title" href="/20250728/%E6%95%B0%E7%90%86in%E8%88%AA%E5%A4%A9/"><span class="title">数理知识在航天中的应用</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E7%AC%94%E8%AE%B0/%E7%89%A9%E7%90%86/">物理</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-01T01:27:39.000Z">2025-07-01</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-09-03T07:21:39.513Z">2025-09-03</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>物理总结</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><span id="more"></span>
+
+<h1 id="力学"><a href="#力学" class="headerlink" title="力学"></a>力学</h1><ul>
+<li>定义：物理学中研究<strong>宏观</strong>物体<strong>低速</strong>机械运动规律的部分。</li>
+<li>宏观：不涉及量子效应。</li>
+<li>低速：不涉及相对论效应。</li>
+</ul>
+<p><strong>经典力学的局限性</strong></p>
+<p>根据力学（经典力学）的定义可得它的局限性：</p>
+<ul>
+<li>速度限制：高速领域失效。</li>
+<li>尺观限制：微观世界不适用。</li>
+<li>引力场限制：强引力场作用下失效。</li>
+</ul>
+<h2 id="质点运动学"><a href="#质点运动学" class="headerlink" title="质点运动学"></a>质点运动学</h2><ul>
+<li>位矢： $ \vec{r} $</li>
+<li>位移： $ s &#x3D; \Delta \vec{r} &#x3D; \Delta x \vec{i} + \Delta y \vec{j} + \Delta z \vec{k} $</li>
+<li>运动学方程：$ \vec{r} &#x3D; \vec{r}(t) &#x3D; x(t)\vec{i} + y(t)\vec{j} + z(t)\vec{k} $</li>
+<li>速度： $ \vec{v} &#x3D; \frac{d\vec{r}}{dt} &#x3D; \frac{dx}{dt} \vec{i} + \frac{dy}{dt} \vec{j} + \frac{dz}{dt} \vec{k} $ </li>
+<li>加速度： $ \vec{a} &#x3D;\frac{d^2 \vec{r}}{dt^2} &#x3D; \frac{d\vec{v}}{dt} &#x3D; a_x \vec{i} + a_y \vec{j} + a_z \vec{k} $ </li>
+<li>运动学方程 $\to$ 质点位置、速度、加速度：微分法。</li>
+<li>质点加速度、速度、初始条件 $\to$ 运动学方程：积分法。</li>
+</ul>
+<h3 id="匀变速直线运动"><a href="#匀变速直线运动" class="headerlink" title="匀变速直线运动"></a>匀变速直线运动</h3><ul>
+<li>定义：质点的加速度 $ \vec{a} $ 恒定不变的运动。</li>
+<li>公式：<br>$$ v &#x3D; v_0 + \int_{t_1}^{t_2} a dt &#x3D; v_0 + at $$<br>$$ s &#x3D; \int_{t_1}^{t_2} v dt &#x3D; v_0(t_2-t_1) + \frac{1}{2} a t^2 &#x3D; \frac{v_0 + v}{2} t $$<br>$$ v^2 - {v_0}^2 &#x3D; 2as $$</li>
+<li>自由落体是特殊的匀变速直线运动（忽略空气阻力），其 $ a &#x3D; g $<blockquote>
+<p>不同地区的自由落体加速度有微小差别，原因：不同地区的 $ r $ 大小不同。<br>  
+    $$ \vec{G \frac{M m}{r^2} } = \vec{m \frac{v^2}{r} } + \vec{mg} $$
+    </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="抛体运动"><a href="#抛体运动" class="headerlink" title="抛体运动"></a>抛体运动</h3><p>$$ \vec{r} &#x3D; \vec{v_0 t} + \vec{\frac{1}{2} g t^2 } $$</p>
+<p><strong>竖直上抛</strong></p>
+<ul>
+<li>射高：<br>$$ H &#x3D; \frac{ 3 {v_0}^2 }{2g} $$</li>
+</ul>
+<p><strong>平抛运动</strong></p>
+<ul>
+<li><p>射程：<br>$$ R &#x3D; \sqrt{ \frac{2h}{g} } v_0 $$</p>
+</li>
+<li><p>轨迹方程：<br>$$ y&#x3D; \frac{g}{ 2 {v_0}^2 } x^2 $$</p>
+</li>
+</ul>
+<p><strong>斜抛运动</strong></p>
+<ul>
+<li><p>射程:<br>$$  R &#x3D; \frac{ {v_0}^2 \sin 2 \theta }{g} $$</p>
+</li>
+<li><p>射高：<br>$$  H &#x3D; \frac{ {v_0}^2 \sin^2 \theta }{2g} $$</p>
+</li>
+<li><p>$$  \frac{H}{R} &#x3D; \frac{ \tan \theta }{2} $$</p>
+</li>
+<li><p>轨迹方程：<br>$$  y &#x3D; \tan \theta · x - \frac{g}{ 2 {v_0}^2 \cos^{2} \theta } x^2 $$</p>
+</li>
+</ul>
+<h3 id="曲线运动"><a href="#曲线运动" class="headerlink" title="曲线运动"></a>曲线运动</h3><p>$$ \rho &#x3D; \frac{ v^2 }{ a_n } $$<br>$$ a_n &#x3D; \frac{ v^2 }{ \rho } \vec{ e_n } $$<br>$$ a_t &#x3D; \frac{ dv }{ dt } \vec{ e_t } &#x3D; \rho \beta $$<br>$$ a &#x3D; \sqrt{ { a_n }^2 + { a_t }^2 } $$</p>
+<p><strong>匀速率圆周运动</strong></p>
+<ul>
+<li>周期：$ T &#x3D; t&#x2F;n $。</li>
+<li>频率：$ \nu &#x3D; 1&#x2F;T $。</li>
+<li>角速度：<br>$$  \omega &#x3D; \frac{ d \phi }{dt} &#x3D; \frac{ 2 \pi }{T} &#x3D; 2 \pi \nu $$</li>
+<li>线速度：<br>$$ v &#x3D; \frac{2 \pi r} {T} &#x3D; \omega r $$</li>
+<li>角加速度：<br>$$ \beta &#x3D; \frac{ d \omega }{dt} &#x3D; 0 $$</li>
+<li>法向加速度：<br>$$ a_n &#x3D; \frac{ v^2 }{ r } &#x3D; \omega^2 r $$</li>
+<li>切向加速度：<br>$$ a_t &#x3D; r \beta &#x3D; 0 $$</li>
+</ul>
+<h3 id="伽利略变换"><a href="#伽利略变换" class="headerlink" title="伽利略变换"></a>伽利略变换</h3><p> $$ \vec{ v_{a对b} } &#x3D; \vec{ v_{a对c} } + \vec{ v_{c对b} } $$</p>
+<ul>
+<li>伽利略变换对于低速运动下的矢量均成立。当速度接近光速时，伽利略变换不可用，要用洛伦兹变换。</li>
+</ul>
+<h2 id="质点动力学"><a href="#质点动力学" class="headerlink" title="质点动力学"></a>质点动力学</h2><h3 id="牛顿三定律"><a href="#牛顿三定律" class="headerlink" title="牛顿三定律"></a>牛顿三定律</h3><p><strong>牛顿第一定律</strong></p>
+<ul>
+<li>力是改变物体运动状态的原因。在惯性系中观察，不受力的物体将保持静止或做匀速运动。</li>
+</ul>
+<p><strong>牛顿第二定律</strong></p>
+<ul>
+<li>物体的加速度跟所受外力的合力成正比，跟物体质量成反比，加速度的方向跟合外力方向相同。<strong>物体所受的合外力等于物体的动量对时间的一次导数</strong>：<br>$$ \vec{F} &#x3D; \frac{d \vec{p}}{dt} &#x3D; m \vec{a} $$</li>
+<li>质心系：<br>$$ \vec{F_{合}} &#x3D; m_{总} \vec{a_c} $$<br>若物体系所受合外力为零，则质心位置不变。</li>
+<li>合量形式与分量形式（力的独立性原理）：<br>$$ \vec{F} &#x3D; \Sigma \vec{F_i} &#x3D; m \Sigma \vec{a_i} $$<br>$$ \vec{F_i} &#x3D; m \vec{a_i} $$</li>
+</ul>
+<p><strong>牛顿第三定律</strong></p>
+<ul>
+<li>两个物体之间的作用力与反作用力总是大小相等，方向相反，作用在同一条直线上：<br>$$ \vec{F_{AB}} &#x3D; - \vec{F_{BA}} $$ </li>
+<li>作用力与反作用力作用于不同物体上，<strong>必是同种性质的力</strong>，<strong>没有因果之分</strong>。</li>
+</ul>
+<h3 id="天体运动"><a href="#天体运动" class="headerlink" title="天体运动"></a>天体运动</h3><p><strong>开普勒三定律</strong></p>
+<ul>
+<li>第一定律：所有行星沿椭圆轨道绕太阳运行，太阳位于椭圆的一个焦点上。</li>
+<li>第二定律：对于任一行星来说，它与太阳的径矢在相等的时间内扫过相等的面积。</li>
+<li>第三定律：行星绕太阳运动轨道的半长轴 $ a $ 的立方与运动周期 $ T $ 的平方成正比：<br>$$ \frac{a^3}{T^2} &#x3D; K $$<blockquote>
+<p>$ K $ 是只与中心天体有关的常量， $ K $ 正比于 $ M $ 。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>开普勒三定律可以应用于所有宏观物体在中心力场下的二体运动，且要求中心物体质量远大于其 “卫星”。</p>
+</blockquote>
+<p><strong>万有引力定律</strong><br>$$ F &#x3D; G \frac{M m}{r^2} $$<br>$$ \vec{F} &#x3D; G \frac{M m}{r^3} \vec{r} $$<br>引力常量 $ G&#x3D;\frac{4 \pi^2 K}{M} (N \cdot m^2 \cdot kg^{-2}) $</p>
+<p><strong>惯性质量和引力质量</strong></p>
+<ul>
+<li>定义牛顿第二定律中反映物体惯性大小的质量为惯性质量 $ m_I $，万有引力定律中反映物体间引力大小的质量为引力质量 $ m_G $。</li>
+<li>惯性质量和引力质量具有不同的物理意义。<blockquote>
+<p>物体所受地球的吸引力与且只与其引力质量有关，而物体因受力产生的加速度与且只与其惯性质量有关。</p>
+</blockquote>
+</li>
+<li>实验测定，惯性质量等于引力质量：<br>$$ \frac{m_I}{m_G} &#x3D; \frac{G M}{g_0 {R_E}^2} \approx 1 $$<blockquote>
+<p>惯性质量等于引力质量是广义相对论的出发点之一。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="常见的力"><a href="#常见的力" class="headerlink" title="常见的力"></a>常见的力</h3><p><strong>受力分析: 一重二弹三摩擦四其他</strong></p>
+<p><strong>弹性力</strong></p>
+<ul>
+<li>看接触面，在弹性限度内。</li>
+<li>张力<ul>
+<li>同一根轻绳上，绳中张力处处相等。</li>
+<li>张力方向沿绳，指向绳内部。</li>
+</ul>
+</li>
+<li>正压力<ul>
+<li>方向总垂直与接触面或接触点处的切线，指向被挤压的物体。</li>
+<li>压力和支持力是一对作用力与反作用力。</li>
+</ul>
+</li>
+<li>弹簧的弹性力<ul>
+<li>胡克定律：<br>$$ \vec{F} &#x3D; - k \vec{x} $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>摩擦力</strong></p>
+<ul>
+<li>方向垂直于正压力，是相互作用力。</li>
+<li>静摩擦力：<br>  $$ F_s &#x3D; {\mu }_s N $$<ul>
+<li>$ {\mu}_s $ 可以大于 1 。</li>
+</ul>
+</li>
+<li>滑动摩擦力：<br>  $$ F_k &#x3D; {\mu}_k N $$<ul>
+<li>对于同样两种物体，$ {\mu}_s &gt; {\mu}_k $</li>
+<li>一般情况下，可以认为 $ {\mu}_k $ 与速率无关。</li>
+</ul>
+</li>
+<li>滚动摩擦力：<br>  ‌$$ M&#x3D;μN $$<br>  $$‌ f_r&#x3D;C_r N $$<ul>
+<li>$ C_r $ 远小于 $ \mu $。</li>
+</ul>
+</li>
+<li>摩擦角：对于静摩擦力和滑动摩擦力，其正压力与摩擦力的合力与正压力成摩擦角 $ \theta $ ，满足：<br>$$ \mu &#x3D; \tan \theta $$</li>
+</ul>
+<h2 id="功和能"><a href="#功和能" class="headerlink" title="功和能"></a>功和能</h2><ul>
+<li>功和能都是标量。</li>
+<li>能看作未表现出来的功。</li>
+<li>功：力对空间的积分：<br>$$ W &#x3D; \vec{F} · \vec{s} &#x3D; \int_{s_1}^{s_2} \vec{F(s)} · d\vec{s} $$ </li>
+<li>功率：<br>$$ P&#x3D;\frac{dW}{dt} $$</li>
+<li>合力的功：<br>$$ W &#x3D; \Sigma W_i $$</li>
+</ul>
+<h3 id="动能"><a href="#动能" class="headerlink" title="动能"></a>动能</h3><ul>
+<li>定义式：<br>$$ E_k &#x3D; \frac{1}{2} m v^2 $$</li>
+</ul>
+<p><strong>动能定理</strong><br>  $$ W_{总} &#x3D; \Delta E_k $$</p>
+<p><strong>物体系动能定理</strong><br>  $$ \Delta E_k &#x3D; W_外 + W_内 $$</p>
+<h3 id="势能"><a href="#势能" class="headerlink" title="势能"></a>势能</h3><p><strong>定义式</strong><br>  $$ E_p &#x3D; \int_{当前位置}^{零势能点} \vec{F_{保守}(x)} \cdot d\vec{x} $$</p>
+<ul>
+<li>势能只存在于保守力中，对于非保守力，不存在势能的概念。</li>
+<li>“势能定理”：<br>$$ W_{保} &#x3D; - \Delta E_p $$<br>$$ W_{保ab} &#x3D; E_{pa} - E_{pb} $$</li>
+<li>重力势能：<br>$$ E_p &#x3D; \int_{h}^{0} (-mg) dh &#x3D; mgh $$<br>零势能点为地面。</li>
+<li>引力势能:<br>$$ E_p &#x3D; \int_{r}^{\infty} G \frac{M m}{r^2} dr &#x3D; -G \frac{M m}{r} $$<br>零势能点为无穷远处。</li>
+<li>弹性势能：<br>$$ E_p &#x3D; \int_{x}^{0} -kx dx &#x3D; \frac{1}{2} k x^2 $$<br>零势能点为弹簧原长处。</li>
+</ul>
+<h3 id="机械能"><a href="#机械能" class="headerlink" title="机械能"></a>机械能</h3><ul>
+<li>定义: 机械能等于动能和势能的代数和。</li>
+</ul>
+<p><strong>机械能定理（功能原理）</strong><br>物体系的机械能的增量等于系统所受外力的总功与非保守内力的总功的代数和。<br>$$ \Delta E &#x3D; W_{外} + W_{内非} $$</p>
+<p><strong>机械能守恒定律</strong><br>在外力和非保守内力都不做功的条件下，系统的机械能守恒，只有系统内的动能和势能相互转化。<strong>本质是能量的转化与守恒定律</strong>：<br>$$ ( E&#x3D; 恒量 , \Delta E_k &#x3D; - \Delta E_p )_ {W_{外} &#x3D; W_{内非} &#x3D;0 } $$</p>
+<h3 id="流体的稳定流动"><a href="#流体的稳定流动" class="headerlink" title="流体的稳定流动"></a>流体的稳定流动</h3><h4 id="理想流体"><a href="#理想流体" class="headerlink" title="理想流体"></a>理想流体</h4><ul>
+<li>定义：绝对不可压缩，且完全没有黏滞性的液体和气体。</li>
+<li>流体质元的速度方向与流线的切线方向一致。</li>
+</ul>
+<p><strong>稳定流动（定常流动）</strong><br>定义：尽管在同一时刻流体内各处的流速可能不同，但流经空间内任一给定的流体质元的速度并不随时间变化。</p>
+<p><strong>连续性原理</strong><br>在同一流管中，不可压缩流体的流速和流管的横截面积的乘积是一个常量：<br>  $$ v_i S_i &#x3D; 常量 $$</p>
+<p><strong>伯努利方程</strong></p>
+<ul>
+<li>本质是机械能守恒定律。</li>
+<li>在作定常流动的流体中，在同一流管中任何一点处，流体每单位体积的动能和势能以及该处的压强之和是个常量：<br>$$ \frac{1}{2} \rho v^2 + \rho g h + p &#x3D; 常量 $$</li>
+<li>在同一流管的任意一点处，压力头、速度头和水头之和是一个常量：<br>$$ \frac{p}{\rho g} + \frac{v^2}{2g} + h &#x3D; 常量 $$<br>压力头 $\frac{p}{\rho g}$ ：静压能的等效高度。<br>速度头 $\frac{v^2}{2g}$ ：动能的等效高度。<br>水头 $h$ ：液体的实际高度。</li>
+<li>应用：<ul>
+<li>空吸作用：水平流管内截面小处压强小。</li>
+<li>小孔流速问题：$ v &#x3D; \sqrt{2gh} $</li>
+<li>虹吸作用：$ U $ 形管内充满液体，且容器外的管口低于容器内液体的自由表面。</li>
+<li>升力：$ p_下 - p_上 &#x3D; 2 \rho v u $ <blockquote>
+<p>静升力（浮力）：因为高度差产生的压强差。<br>动升力（升力）：因为速度差产生的压强差。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="真实流体"><a href="#真实流体" class="headerlink" title="真实流体"></a>真实流体</h4><ul>
+<li>可压缩。</li>
+<li>具有粘滞性，存在内摩擦。</li>
+</ul>
+<p><strong>伯努利方程</strong><br>$$ z_1 + \frac{p_1}{\rho g} + \frac{\alpha_1 v_1}{2g} &#x3D; z_2 + \frac{p_2}{\rho g} + \frac{\alpha_2 v_2}{2g} + h_w $$</p>
+<ul>
+<li>$ \alpha $ 为动能修正系数，通常 $\alpha \underline{&gt;} 1 $。</li>
+<li>$ h_w $ 为能量损失项，包括因粘性摩擦、局部阻力等导致的机械能损耗。</li>
+</ul>
+<h2 id="动量和角动量"><a href="#动量和角动量" class="headerlink" title="动量和角动量"></a>动量和角动量</h2><h3 id="动量"><a href="#动量" class="headerlink" title="动量"></a>动量</h3><ul>
+<li>动量是矢量，表示力对时间的积分。</li>
+<li>定义式：<br>$$ \vec{p} &#x3D; m \vec{v} &#x3D; \int F dt $$</li>
+</ul>
+<p><strong>动量定理</strong></p>
+<ul>
+<li>物体动量的增量等于作用于物体力的冲量：<br>$$ \vec{I} &#x3D; \vec{\Delta p} $$<br>$$ Ft &#x3D; mv $$</li>
+<li>微分式：<br>$$ \vec{F} dt &#x3D; d(m\vec{v}) $$</li>
+<li>积分式：<br>$$ \int_{t_1}^{t_2} \vec{F} dt &#x3D; \vec{p_2} - \vec{p_1} $$</li>
+<li>物体系的动量增等于各外力冲量的矢量和：<br>$$ \vec{\Delta p_{系}} &#x3D; \vec{I_{外}} $$</li>
+</ul>
+<p><strong>动量守恒定律</strong><br>如果物体系所受外力的矢量和恒为零，则物体系的动量保持不变：<br>$$ (\Sigma \vec{P_i} &#x3D; \Sigma \vec{P_{i0}})_{\Sigma \vec{F_i} &#x3D; 0} $$ </p>
+<ul>
+<li>条件是外力的矢量和为零，而不是外力的冲量的矢量和为零。</li>
+<li>描述的是矢量关系，注意方向。</li>
+<li>涉及的各物体速度必须是<strong>相对于同一惯性系</strong>的速度。</li>
+</ul>
+<h3 id="碰撞"><a href="#碰撞" class="headerlink" title="碰撞"></a>碰撞</h3><p>压缩阶段+恢复阶段。</p>
+<h4 id="正碰"><a href="#正碰" class="headerlink" title="正碰"></a>正碰</h4><p><strong>完全弹性碰撞</strong></p>
+<ul>
+<li>$ e&#x3D;1 $</li>
+<li>动量守恒，能量守恒。</li>
+<li>$|v_r|$ 不变。</li>
+<li>速度公式：<br>$$ v_1 &#x3D; \frac{ m_1 - m_2 }{ m_1 + m_2 } v_{10} , v_2 &#x3D; \frac{ 2 m_1 }{ m_1 + m_2 } v_{10} $$</li>
+<li>弹性正碰中，两质量相等的球碰撞后彼此交换速度。</li>
+<li>$ v_{20} &#x3D; 0 $ ：<ul>
+<li>$ m_1 &#x3D; m_2 : v_1 &#x3D; 0 , v_2 &#x3D; v_{10} $ </li>
+<li>$ m_1 &lt;&lt; m_2 : v_1 \approx -v_{10} , v_2 \approx 0 $</li>
+<li>$ m_1 &gt;&gt; m_2 : v_1 \approx v_{10} , v_2 \approx 2 v_{10} $</li>
+</ul>
+</li>
+</ul>
+<p><strong>完全非弹性碰撞</strong></p>
+<ul>
+<li>$ e&#x3D;0 $</li>
+<li>动量守恒，碰撞后速度一致。</li>
+<li>速度公式：<br>$$ V &#x3D; \frac{ m_1 v_{10} + m_2 v_{20} }{ m_1 + m_2 } $$</li>
+<li>能量损失公式：<br>$$ \Delta E_k &#x3D; \frac{1}{2}\frac{m_1 m_2}{(m_1 + m_2)} |v_{10}^2 - v_{20}^2| $$</li>
+</ul>
+<p><strong>非弹性碰撞</strong></p>
+<ul>
+<li>恢复系数：<br>$$ e &#x3D; | \frac{v_1 - v_2 }{v_{10} - v_{20} } | $$</li>
+</ul>
+<h3 id="反冲"><a href="#反冲" class="headerlink" title="反冲"></a>反冲</h3><ul>
+<li>动量守恒，不计外力。</li>
+</ul>
+<p><strong>火箭运动</strong></p>
+<ul>
+<li><p>火箭的速度：<br>设火箭开始飞行时质量为 $ m_0 $ ，速度为 $0$ ；燃料燃尽时质量为 $ m $ ，速度为 $ v $ 。根据动量守恒定律计算有：<br>$$ v&#x3D;uln\frac{m_0}{m} $$<br>$ \frac{m_0}{m} $ 称为火箭的质量比。<br>所以，要提高火箭速度，可以采用提高喷气速度和质量比的方法。目前世界上一般采用多级火箭来提高速度。</p>
+</li>
+<li><p>火箭的推力<br>取 $t$ 时刻火箭喷出的气体 $dm$ 为研究对象，其速率与火箭速率同为 $v$ ，在 $t+dt$ 时刻以 $u$ 喷出，根据动量守恒定律计算有：<br>$$ F_{气} &#x3D; -u ( \frac{dm}{dt} ) $$<br>这就是火箭的推力。</p>
+</li>
+</ul>
+<h3 id="角动量"><a href="#角动量" class="headerlink" title="角动量"></a>角动量</h3><ul>
+<li>定义式：<br>$$ \vec{L} &#x3D; \vec{p} \times \vec{r} $$</li>
+</ul>
+<p><strong>角动量定理</strong><br>质点对某定点的角动量变化率等于质点所受合外力对这一点的力矩：<br>$$ \vec{M} &#x3D; \frac{d\vec{L}}{dt} &#x3D; \vec{F} \times \vec{r} $$</p>
+<p><strong>角动量守恒定律</strong><br>当外力对某定点的力矩为零时，质点对这一点的角动量守恒：<br>$$ ( \vec{L}&#x3D;\vec{L_0} )_{\vec{M}&#x3D;0} $$</p>
+<ul>
+<li>对于在有心力作用下的质点来说，它对力心的角动量守恒。</li>
+</ul>
+<h2 id="刚体的运动与平衡"><a href="#刚体的运动与平衡" class="headerlink" title="刚体的运动与平衡"></a>刚体的运动与平衡</h2><p><strong>刚体</strong></p>
+<ul>
+<li>定义：在运动过程中大小和形状都不发生变化的物体。</li>
+</ul>
+<p><strong>质心</strong></p>
+<ul>
+<li>定义式：<br>$$ \vec{r_c} &#x3D; \frac{ \int \vec{r} dm }{m} $$</li>
+<li>一般情况下，刚体的重心和质心重合，但也有反例，如宇航员。</li>
+</ul>
+<h3 id="平动"><a href="#平动" class="headerlink" title="平动"></a>平动</h3><ul>
+<li>在运动过程中，刚体上任意一条直线在各个时刻的位置始终保持彼此平行的运动。</li>
+<li>此时的刚体可近似看作质点，满足 $ \vec{F} &#x3D;m \vec{a} $ 。</li>
+</ul>
+<h3 id="定轴转动"><a href="#定轴转动" class="headerlink" title="定轴转动"></a>定轴转动</h3><p><strong>匀变速转动运动公式</strong><br>$$ \omega &#x3D; \omega _0 + \beta t $$<br>$$ \theta &#x3D; \omega _0 + \frac{1}{2} \beta t^2 $$<br>$$ \omega ^2 - { \omega _0}^2 &#x3D; 2 \beta \theta $$</p>
+<p><strong>转动惯量</strong></p>
+<ul>
+<li>定义式：<br>$$ I &#x3D; \Sigma m_i {r_i}^2 &#x3D; \int_{0}^{r} m(r) {dr}^2 $$</li>
+<li>加法原理：<br>$$ I &#x3D; \Sigma I_i $$</li>
+<li>平行轴定理：<br>$$ I &#x3D; I_c + m d^2 $$</li>
+<li>垂直轴定理：<br>$$ I_z &#x3D; I_x + I_y $$</li>
+</ul>
+<p><strong>转动定律</strong></p>
+<ul>
+<li>刚体的角加速度与外力对转轴的力矩成正比，与刚体对该轴的转动惯量成反比：<br>$$ M &#x3D;F r &#x3D; I \beta $$</li>
+</ul>
+<p><strong>转动动能</strong><br>$$ E_k &#x3D; \Sigma \frac{1}{2} m_i {v_i}^2 &#x3D; \Sigma \frac{1}{2} m_i {r_i}^2 \omega^2 &#x3D; \frac{1}{2} ( \Sigma m_i {r_i}^2  ) \omega^2 &#x3D; \frac{1}{2} I \omega^2 $$</p>
+<p><strong>角动量</strong></p>
+<ul>
+<li>跟质点转动的角动量十分类似。</li>
+<li>定义：刚体对轴的转动惯量与刚体绕轴转动的角速度的乘积：<br>$$ \vec{L} &#x3D; I \vec{ \omega } $$</li>
+<li>角动量守恒定律：<br>$$ ( \vec{L} &#x3D; I \vec{ \omega } &#x3D; 恒量 )_{ M &#x3D; 0 } $$</li>
+</ul>
+<p><strong>常力矩的功</strong><br>$$ W &#x3D; \vec{M} \cdot \vec{\theta} &#x3D; \int \vec{M} \cdot d\vec{\theta} $$</p>
+<h3 id="刚体的平衡"><a href="#刚体的平衡" class="headerlink" title="刚体的平衡"></a>刚体的平衡</h3><p><strong>平动平衡</strong><br>$$ \Sigma F_i &#x3D; 0 $$</p>
+<p><strong>转动平衡</strong><br>$$ \Sigma M_i &#x3D; 0 $$</p>
+<h2 id="机械振动和机械波"><a href="#机械振动和机械波" class="headerlink" title="机械振动和机械波"></a>机械振动和机械波</h2><h3 id="简谐振动"><a href="#简谐振动" class="headerlink" title="简谐振动"></a>简谐振动</h3><p><strong>定义：</strong> 如果物体离开<strong>平衡位置</strong>的位移按余弦函数（正弦函数）的规律随时间变化，这种运动称为简谐振动。</p>
+<p><strong>判定</strong></p>
+<ul>
+<li>$$ \vec{x} &#x3D; A \cos (\omega t + \phi_0 ) $$</li>
+<li>$$ \vec{F} &#x3D; - k \vec{x} $$</li>
+<li>$$ \frac{d^2 x}{dt^2} + \omega^2 x &#x3D; 0 $$</li>
+<li>$$ (E_p + E_k &#x3D; \frac{1}{2} mv^2 + \frac{1}{2} k x^2 &#x3D; E_0)_{任一时刻} $$</li>
+</ul>
+<p><strong>表达式</strong></p>
+<ul>
+<li>$$ x &#x3D; A \cos (\omega t + \phi_0) $$</li>
+<li>$$ x &#x3D; A e^{i(\omega t + \phi_0) } $$</li>
+<li>$$ A &#x3D; \sqrt{ {x_0}^2 + \frac{ {v_0}^2}{ \omega^2 } } &#x3D; \sqrt{ {x_0}^2 + \frac{m {v_0}^2}{k} }  $$</li>
+<li>$$ \omega &#x3D; \sqrt{\frac{k}{m} } $$</li>
+<li>$$ \phi_0 &#x3D; \arctan (- \frac{v_0}{\omega x_0}) $$ </li>
+<li>$$ v &#x3D; \frac{dx}{dt} &#x3D; - \omega A \sin(\omega t +\phi_0)&#x3D; -v_m \sin(\omega t +\phi_0) $$</li>
+<li>$$ a &#x3D; \frac{dv}{dt} &#x3D; -\omega^2 A \cos(\omega t +\phi_0)&#x3D; -a_m \cos(\omega t +\phi_0) $$</li>
+<li>$$ T &#x3D; \frac{2 \pi }{\omega} &#x3D; 2 \pi \sqrt{\frac{m}{k} } &#x3D; \frac{1}{\nu} $$</li>
+<li>$$ E &#x3D; \frac{1}{2} k A^2 &#x3D; \frac{1}{2} m \omega^2 A^2 $$</li>
+</ul>
+<p><strong>常见谐振动</strong></p>
+<ul>
+<li>单摆的小角度摆动：<br>$$ T &#x3D; 2 \pi \sqrt{\frac{l}{g} } $$</li>
+<li>复摆的小角度摆动：<br>$$ T &#x3D; 2 \pi \sqrt{\frac{I}{m g \overline{OC}} } $$</li>
+</ul>
+<h3 id="阻尼振动"><a href="#阻尼振动" class="headerlink" title="阻尼振动"></a>阻尼振动</h3><p><strong>摩擦阻尼</strong></p>
+<ul>
+<li>$$ F_f &#x3D; - \gamma v &#x3D; - \gamma \frac{dx}{dt} $$</li>
+<li>阻尼系数：<br>$$ \delta &#x3D; \frac{\gamma}{2m} $$</li>
+<li>固有角频率：<br>$$ \omega_0^2 &#x3D; \frac{k}{m} $$</li>
+<li>$$ \frac{d^2 x}{dt^2} + 2 \delta \frac{dx}{dt} + \omega_0^2 x &#x3D;0 $$</li>
+<li>阻尼较小 $(\delta &lt; \omega_0)$ :<ul>
+<li>$$ x &#x3D; A’ \cos (\omega’ t + \phi’) $$</li>
+<li>$$ A’ &#x3D; A_0 e^{-\delta t} $$</li>
+<li>$$ \omega’ &#x3D; \sqrt{\omega_0^2 - \delta^2} &#x3D; \sqrt{\frac{k}{m} - \frac{\gamma^2}{4 m^2} } $$</li>
+<li>$$ T’&#x3D; \frac{2 \pi}{\omega’} &#x3D; \frac{2 \pi}{\sqrt{\omega_0^2 - \delta^2}} &lt; T_0 $$</li>
+</ul>
+</li>
+<li>临界阻尼 $(\delta &#x3D; \omega_0)$ :<br>振动物体刚好能平滑地回到平衡位置。此时物体回到平衡位置所用时间最短。</li>
+<li>过阻尼 $(\delta &gt; \omega_0)$ :<br>物体以非周期运动的状态回到平衡位置。</li>
+</ul>
+<h3 id="受迫振动"><a href="#受迫振动" class="headerlink" title="受迫振动"></a>受迫振动</h3><p><strong>表达式</strong></p>
+<ul>
+<li>驱动力：<br>$$ F &#x3D; F_0 \cos (\omega_d t) $$</li>
+<li>$$ \frac{d^2 x}{dt^2} + 2\delta \frac{dx}{dt} + \omega_0^2 x &#x3D; \frac{F_0}{m} \cos \omega_d t $$</li>
+<li>阻尼较小：<ul>
+<li>$$ x&#x3D; A_0 e^{-\delta t} \cos (\sqrt{\omega_0^2 - \delta^2 }t + \phi_0’ ) + A \cos (\omega_d t + \phi) \approx A \cos (\omega_d t + \phi) $$</li>
+<li>$$ A &#x3D; \frac{F_0}{m \sqrt{(\omega_0^2 - \omega_d^2 )^2 + 4 \delta^2 \omega_d^2 }} $$</li>
+<li>$$ \tan \phi_0 &#x3D; - \frac{2 \delta \omega_d}{\omega_0^2 - \omega_d^2} $$</li>
+<li>$$ v &#x3D; \frac{dx}{dt} &#x3D; - \omega_d \cos (\omega_d t + \phi) $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>共振</strong></p>
+<ul>
+<li>位移共振：位移振幅达到最大值 $ (\frac{dA}{d \omega_d } &#x3D;0) $ ：<br>$$ w_{共振} &#x3D; \sqrt{\omega_0^2 - 2 \delta^2} $$</li>
+<li>速度共振：速度达到最大值 $ (\frac{d v_m}{d \omega_d } &#x3D;0) $ ：<br>$$ \omega_{共振} &#x3D; \omega_0 $$</li>
+</ul>
+<h3 id="振动的合成"><a href="#振动的合成" class="headerlink" title="振动的合成"></a>振动的合成</h3><p>这里只考虑一维谐振动的合成。</p>
+<p><strong>同频率谐振动的合成</strong><br>设两个谐振动分别为 $ x_1 &#x3D; A_1 \cos(\omega t +\phi_{01}) $ 和 $ x_2 &#x3D; A_2 \cos(\omega t +\phi_{02}) $ ，应用旋转矢量法，可得：<br>$$ x&#x3D;x_1+x_2&#x3D;A_1 \cos(\omega t +\phi_{01})+A_2 \cos(\omega t +\phi_{02})&#x3D;A \cos(\omega t+\phi) $$<br>$$ A &#x3D; \sqrt{A_1^2 + A_2^2 +2 A_1 A_2 \cos(\phi_{02}-\phi_{01})} $$<br>$$ \tan \phi &#x3D; \frac{A_1 \sin \phi_{01}+A_2 \sin \phi_{02} }{A_1 \cos \phi_{01}+A_2 \cos \phi_{02} } $$<br>当两振动同相，即 $\phi_{02}-\phi_{01}&#x3D;2k\pi $ 时：$A &#x3D; A_1 + A_2 $。<br>当两振动反相，即 $\phi_{02}-\phi_{01}&#x3D;2k\pi $ 时：$A &#x3D; |A_1 - A_2| $。</p>
+<p><strong>不同频率谐振动的合成</strong><br>设两个谐振动分别为 $ x_1 &#x3D; A_0 \cos(\omega_1 t +\phi_0) $ 和 $ x_2 &#x3D; A_0 \cos(\omega_2 t +\phi_0) $ 。当 $|\omega_2 - \omega_1 |&lt;&lt; \omega_1 \approx \omega_2 $ 时，可得：<br>$$ x &#x3D; 2A_0 \cos (\frac{\omega_2 - \omega_1}{2} t) \cos(\frac{\omega_2 + \omega_1}{2} t + \phi_0) \approx A \cos(\omega t + \phi_0) $$<br>$$ A &#x3D; | 2A_0 \cos \frac{\omega_2 - \omega_1}{2} t |$$<br>$$ \omega &#x3D; \frac{\omega_2 - \omega_1 }{2} \approx \omega_1 \approx \omega_2 $$<br>拍：合振动振幅的周期性变化：<br>$$ \nu_{拍} &#x3D; \frac{1}{\tau} &#x3D; | \frac{\omega_2 - \omega_1}{2 \pi} | &#x3D; | \nu_2 - \nu_1 | $$</p>
+<h3 id="简谐波"><a href="#简谐波" class="headerlink" title="简谐波"></a>简谐波</h3><p><strong>机械波</strong></p>
+<ul>
+<li>定义：简谐振动在弹性介质中传播形成的波。</li>
+<li>横波：质元的振动方向与波的传播方向垂直。<br>纵波：质元的振动方向平行于波的传播方向。</li>
+<li>波速：机械波的波速仅取决于介质的弹性和惯性。<br>$$ u_{弦} &#x3D; \sqrt{\frac{F}{\rho_{线}}} $$<br>$$ u_{气} &#x3D; \sqrt{\frac{\gamma p}{\rho}} &#x3D; \sqrt{\frac{\gamma RT}{M}} $$<br>周期和波长：<br>$$ \lambda &#x3D; u T &#x3D; \frac{u}{\nu} $$</li>
+</ul>
+<p><strong>波传播的独立性</strong><br>若有几列波同时在一介质中传播，如果这几列波在空间中某点处相遇那么它们将保持自己原有的特性独立传播。</p>
+<p><strong>波的叠加原理</strong><br>在几列波相遇的区域内，任一点处质元的振动为各列波单独在该点引起的振动的合振动。</p>
+<p><strong>平面简谐波的波函数</strong><br>若原点处质元振动的表达式为 $ y_0 (t) &#x3D; A \cos(\omega t+\phi_0) $ ，则波函数为：<br>$$ y(x,t) &#x3D; A \cos [ \omega (t \overline{+} \frac{x}{u}) + \phi_0] $$<br>波沿 $x$ 轴正方向传播取 $-$ ，沿 $x$ 轴负方向传播取 $+$ 。<br>其他形式：<br>$$ y&#x3D;A\cos[2\pi(\frac{t}{T}\overline{+}\frac{x}{\lambda})+\phi_0] &#x3D; A\cos[2\pi(\nu t\overline{+}\frac{x}{\lambda})+\phi_0] $$<br>$$ y&#x3D;A\cos(\omega t\overline{+}\frac{2\pi x}{\lambda}+\phi_0) $$</p>
+<p><strong>平面波的波动方程</strong><br>$$ \frac{\partial^2 y}{\partial x^2} &#x3D; \frac{1}{u^2} \frac{\partial^2 y}{\partial t^2} $$<br>$$ \frac{\partial^2 y}{\partial t^2} &#x3D; -A\omega^2 \cos [\omega(t \overline{+} \frac{x}{u}) + \phi_0 ]  $$<br>$$ \frac{\partial^2 y}{\partial x^2} &#x3D; -A\frac{\omega^2}{u^2} \cos [\omega(t \overline{+} \frac{x}{u}) + \phi_0 ]  $$</p>
+<p><strong>能量密度</strong><br>定义：介质中单位体积的波动能量。<br>瞬时能量密度：<br>$$ \Delta E_k &#x3D; \frac{1}{2} \rho_l \Delta x (\frac{\partial y}{\partial t})^2 &#x3D; \frac{1}{2} \rho_l \Delta x \omega^2 A^2 \sin^2 [\omega(t\overline{+}\frac{x}{u})+\phi_0] $$<br>$$ \Delta E_p &#x3D; \frac{1}{2} F \Delta x (\frac{\partial y}{\partial x})^2 &#x3D; \frac{1}{2} F \Delta x \frac{1}{u^2} \omega^2 A^2 \sin^2 [\omega(t\overline{+}\frac{x}{u})+\phi_0]$$<br>$$ &#x3D; \frac{1}{2} \rho_l \Delta x \omega^2 A^2 \sin^2 [\omega(t\overline{+}\frac{x}{u})+\phi_0] &#x3D; \Delta E_k $$<br>质元的动能和势能的时间关系式是相同的，两者同相且大小相等。<br>$$ \Delta E &#x3D; \Delta E_k + \Delta E_p &#x3D; \rho_l \Delta x \omega^2 A^2 \sin^2 [\omega(t\overline{+}\frac{x}{u})+\phi_0]$$<br>$$ &#x3D;\Delta x S \rho \omega^2 A^2 \sin^2[\omega(t\overline{+}\frac{x}{u})+\phi_0] $$<br>$$ w &#x3D; \frac{\Delta E}{S \Delta x} &#x3D;  \frac{\Delta x S \rho \omega^2 A^2 \sin^2[\omega(t\overline{+}\frac{x}{u})+\phi_0]}{S \Delta x} &#x3D; \rho \omega^2 A^2 \sin^2 [\omega(t\overline{+}\frac{x}{u})+\phi_0] $$<br>平均能量密度：<br>$$ \overline{w} &#x3D; \rho \omega^2 A^2 \frac{1}{T} \int_{0}^{T} \sin^2 \omega t dt &#x3D; \frac{1}{2} \rho A^2 \omega^2 $$</p>
+<p><strong>波的强度</strong><br>能流：单位时间内通过介质中某面积的能量称为通过该面积的能流。<br>$$ \overline{P} &#x3D; \overline{w} uS $$<br>波的强度：通过与波动传播方向垂直的单位面积的平均能流，即平均能流密度。<br>弹性介质中的简谐波的强度正比于振幅的二次方，正比于角频率的二次方，正比于介质的特征阻抗。<br>$$ I &#x3D; \frac{\overline{P}}{S} &#x3D; \overline{w} u &#x3D; \frac{1}{2} \rho u \omega^2 A^2 &#x3D; \frac{1}{2} Z \omega^2 A^2 $$<br>其中特征阻抗 $Z&#x3D;\rho u $ 。特征阻抗大的称为波密介质，特征阻抗小的称为波疏介质。</p>
+<h3 id="波的衍射"><a href="#波的衍射" class="headerlink" title="波的衍射"></a>波的衍射</h3><p><strong>惠更斯定理</strong><br>在波的传播过程中，波阵面上的每一点都可看作发射子波的波源，在其后的任一时刻，这些子波的包络面就成为新的波阵面。</p>
+<p><strong>波的衍射</strong><br>定义：当波在传播过程中遇到障碍物时，其传播方向绕过障碍物而发生偏折的现象。</p>
+<h3 id="波的干涉"><a href="#波的干涉" class="headerlink" title="波的干涉"></a>波的干涉</h3><p>定义：在空间某些点处，振动始终加强，在另一些点处振动始终减弱或完全抵消的现象。</p>
+<p><strong>相干波</strong><br>频率相同，振动方向相同，相位差恒定的两列波。</p>
+<p><strong>相干波的特征</strong><br>设两个相干波源在某点引起的振动表达式分别为：<br>$$ y_1 &#x3D; A_1 \cos(\omega t + \phi_{01} - \frac{2 \pi r_1}{\lambda} ) $$<br>$$ y_2 &#x3D; A_2 \cos(\omega t + \phi_{02} - \frac{2 \pi r_2}{\lambda} ) $$<br>其合振动为：<br>$$ y &#x3D; A \cos (\omega t +\phi_0) $$<br>$$ A &#x3D; \sqrt{A_1^2 + A_2^2 + 2 A_1 A_2 \cos(\phi_{02}-\phi_{01}-2 \pi \frac{r_2-r_1}{\lambda})} $$<br>$$ \tan \phi_0 &#x3D; \frac{A_1 \sin (\phi_{01} - \frac{2 \pi r_1}{\lambda})+ A_2 \sin (\phi_{02} - \frac{2 \pi r_2}{\lambda}) }{A_1 \cos (\phi_{01} - \frac{2 \pi r_1}{\lambda})+ A_2 \cos (\phi_{02} - \frac{2 \pi r_2}{\lambda}) } $$<br>对于满足 $\Delta \phi &#x3D; \phi_{02}-\phi_{01}-2 \pi \frac{r_2-r_1}{\lambda} &#x3D; 2 k \pi $ 的空间各点，$ A &#x3D; A_1 + A_2 $ 。<br>对于满足 $\Delta \phi &#x3D; \phi_{02}-\phi_{01}-2 \pi \frac{r_2-r_1}{\lambda} &#x3D; (2k+1) \pi $ 的空间各点，$ A &#x3D; |A_1 - A_2| $ 。<br>如果 $\phi_{01}&#x3D;\phi_{02} $:<br>对于满足 $ \delta &#x3D; r_2 - r_1 &#x3D; k\lambda $ 的空间各点，$ A &#x3D; A_1 + A_2 $ 。<br>对于满足 $ \delta &#x3D; r_2 - r_1 &#x3D; (k + \frac{1}{2})\lambda $ 的空间各点，$ A &#x3D; |A_1 - A_2| $ 。<br>由于 $ I \propto A^2 $， 叠加后波的强度为：<br>$$ I &#x3D; I_1 + I_2 + 2\sqrt{I_1I_2} \cos \Delta \phi &#x3D; (4 I_1 \cos^2 \frac{\Delta \phi}{2})_{I_1 &#x3D; I_2} $$</p>
+<p><strong>驻波</strong><br>定义：合成波中各质元以各自确定的不同振幅在各自平衡位置附近振动，且没有振动状态或相位传播的波。“有波之形，无波之实”。<br>设两个相向传播的波的表达式分别为：<br>$$ y_1 &#x3D; A \cos 2 \pi (\frac{t}{T}-\frac{x}{\lambda}) $$<br>$$ y_2 &#x3D; A \cos 2 \pi (\frac{t}{T}+\frac{x}{\lambda}) $$<br>其合成波为：<br>$$ y &#x3D; y_1+y_2&#x3D;A[\cos 2 \pi (\frac{t}{T}-\frac{x}{\lambda})+\cos 2 \pi (\frac{t}{T}+\frac{x}{\lambda})] &#x3D; (2A \cos \frac{2 \pi}{\lambda} x) \cos \frac{2 \pi}{T} t $$<br>波腹：满足 $x&#x3D;k \frac{\lambda}{2} $ 的位置，振幅为 $2A$ 。<br>波节：满足 $x&#x3D;(2k+1) \frac{\lambda}{4}$ 的位置，振幅为 $0$ 。<br>对于弦线上的驻波，由于两端必须是波节，所以对波长和频率有一定限制：<br>$$ \lambda_n &#x3D; \frac{2L}{n} $$<br>$$ \nu_n &#x3D; n \frac{u}{2L} $$<br>把 $n&#x3D;1$ 对应的频率称为基频，其他频率称为 $n$ 次谐频。</p>
+<p><strong>半波损失</strong><br>当波从波疏介质传播到波密介质而在分界面处反射时，反射点出现波节，即入射波在反射点反射时有 $\pi$ 的相位突变。当波从波密介质传播到波疏介质时，反射波和入射波在反射点同相位，没有半波损失。</p>
+<h3 id="多普勒效应"><a href="#多普勒效应" class="headerlink" title="多普勒效应"></a>多普勒效应</h3><p><strong>机械波</strong><br>$$ \nu_R &#x3D; \frac{u\underline{+} v_R}{u\overline{+} v_S} \nu_S $$</p>
+<ul>
+<li>$ v_R $ 为接收者的速度，近 $+$ 远 $-$。</li>
+<li>$ v_S $ 为发射源的速度，近 $+$ 远 $-$。</li>
+</ul>
+<p><strong>电磁波</strong><br>$$ \nu_R &#x3D; \sqrt{\frac{c+v}{c-v}} \nu_S $$</p>
+<ul>
+<li>$v$ 为波源与接收器之间的相对运动速度，近 $+$ 远 $-$。</li>
+</ul>
+<h1 id="热学"><a href="#热学" class="headerlink" title="热学"></a>热学</h1><ul>
+<li>定义：研究物质热现象的规律及应用的学科。通过研究热力学系统内部之间或它与外界的相互作用确定该系统的性质及其变化规律。</li>
+<li>热现象：与物体冷热程度有关的物体状态和性质的变化。</li>
+<li>热是物体分子运动的表现。</li>
+</ul>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>分子动理论</strong></p>
+<ul>
+<li>物质由大量分子组成。</li>
+<li>分子因受不平衡撞击而永不停息做无规则运动。</li>
+<li>运动的分子间由分子力的作用。</li>
+</ul>
+<p><strong>热传递</strong></p>
+<ul>
+<li>热传导：热量从高温端传向低温端。</li>
+<li>热对流：流体内因温度不同而发生相对的宏观运动。</li>
+<li>热辐射：任意温度下凝聚态物体以发射电磁波的形式向外辐射能量。<ul>
+<li>辐射能量按波长的分布是随辐射物体温度的不同而不同的。</li>
+<li>吸收能力越大的物体辐射能力也越大。</li>
+</ul>
+</li>
+</ul>
+<p><strong>平衡态</strong></p>
+<ul>
+<li>定义：在不受外界影响的条件下，系统的宏观性质不随时间变化的状态。</li>
+<li>状态参量：系统处于平衡态时描述其宏观状态的物理量。</li>
+<li>热平衡方程：参与热传递的物体最终达到热平衡时：<br>$$ Q_{放} &#x3D; Q_{吸} $$</li>
+</ul>
+<p><strong>比热容</strong><br>定义：单位质量的某种物质，温度升高或降低 $1K$ 时吸收或放出的热量。<br>$$ Q_{吸} &#x3D; c m \Delta t $$</p>
+<h2 id="气体"><a href="#气体" class="headerlink" title="气体"></a>气体</h2><h3 id="理想气体"><a href="#理想气体" class="headerlink" title="理想气体"></a>理想气体</h3><ul>
+<li><p>定义 ：严格遵从理想气体状态方程的气体。温度不太低，压强不太高的大部分气体都可以看作理想气体。</p>
+</li>
+<li><p><strong>微观模型假设</strong> </p>
+<ul>
+<li>气体分子看做质点</li>
+<li>忽略分子间相互作用力</li>
+<li>分子间及分子与容器壁的碰撞可看作完全弹性碰撞</li>
+<li>平衡态时气体在空间分布均匀</li>
+<li>平衡态时气体沿空间各个方向运动概率相等</li>
+</ul>
+</li>
+</ul>
+<h4 id="状态方程"><a href="#状态方程" class="headerlink" title="状态方程"></a>状态方程</h4><p>$$  pV &#x3D; \nu RT  $$<br>普适气体常量 $R&#x3D;8.31(J \cdot mol^{-1} \cdot K^{-1}) $。<br>$$ p&#x3D;nkT $$<br>玻尔兹曼常量 $ k&#x3D; \frac{R}{N_A} &#x3D; 1.38(J \cdot K^{-1}) $。</p>
+<h4 id="压强"><a href="#压强" class="headerlink" title="压强"></a>压强</h4><p><strong>理想气体压强推导</strong></p>
+<p>考虑一个边长为 $ L $ 的立方容器。其中分子质量为 $ m $，分子总数为 $N$ 。对于其中的一个分子，其速度为 $ v_i $，每次撞击容器壁的冲量 $$ F_{ix}&#x3D;2mv_{ix} $$ 它往返一次的时间 $$ \Delta t &#x3D; \frac{2L}{v_{ix}} $$ 即它施加于一个容器壁的平均冲力 $$ F_{ix}&#x3D; \frac{mv_{Nx}^2 } {L} $$ 容器中所有分子以不同速度与容器壁碰撞，施加于每个容器壁的平均冲力为 $$ F_{ix}&#x3D; \frac{\Sigma v_{ix}^2} {N} &#x3D; \frac{m}{L} N \overline{v_{x}^2} $$ 由于分子质量相等，分子间碰撞为完全弹性碰撞，所以碰撞时动量交换，可以看作原分子继续向前运动，即不考虑分子间碰撞。考虑在平衡态时气体分子沿各个方向的运动机会均等，故有 $$ \overline{v_x^2}&#x3D;\frac{1}{3}\overline{v^2}$$ 每个容器壁的压强就是容器壁单位面积上所受的力，即 $$ p&#x3D; \frac{F}{L^2} &#x3D; \frac{N}{L^3} m \overline{v_x^2} &#x3D; \frac{1}{3}nm\overline{v^2}$$ 根据 $ \overline{E_k} &#x3D; \frac{1}{2} m v^2 $, 压强公式可改写为 $$ p&#x3D; \frac{2}{3} n \overline{E_k} $$</p>
+<p><strong>道尔顿分压定律</strong></p>
+<ul>
+<li>混合气体的压强等于各组分压强之和：<br>$$ p &#x3D; \Sigma p_i $$</li>
+</ul>
+<h4 id="内能"><a href="#内能" class="headerlink" title="内能"></a>内能</h4><ul>
+<li>定义 ：分子动能和势能的代数和。</li>
+<li><strong>能量按自由度均分定理</strong> ： 在温度为 $ T $ 的平衡态下，气体分子任一自由度的平均能量都为 $ kT&#x2F;2 $ 。</li>
+<li>公式：<br>$$ E &#x3D; \frac{i}{2} \nu RT $$</li>
+<li>关于自由度：<ul>
+<li>单原子分子：$ i&#x3D;3 $，三个平动自由度</li>
+<li>双原子分子：$ i&#x3D;5 $，三个平动自由度，两个转动自由度</li>
+<li>多原子分子：$ i&#x3D;6 $, 三个平动自由度，三个转动自由度</li>
+<li>振动自由度：对于每一个振动自由度上既有 $ kT&#x2F;2 $ 的平均振动动能 ，也有 $ kT&#x2F;2 $ 的平均弹性势能。但对于理想气体，不考虑振动的情况。</li>
+</ul>
+</li>
+</ul>
+<h4 id="速率分布"><a href="#速率分布" class="headerlink" title="速率分布"></a>速率分布</h4><p><strong>麦克斯韦速率分布律</strong></p>
+<ul>
+<li>定义：定义 $ f(v) &#x3D; \frac{dN}{N dv} $ 为分子速率分布函数。</li>
+<li>表示<strong>大量分子</strong>在速率 $ v $ 附近的单位速率区间内分子数占总分子数的<strong>比率</strong>。</li>
+<li>表示<strong>单个分子</strong>在速率 $ v $ 附近的单位速率区间内的<strong>概率</strong>。</li>
+<li>$$ \frac{dN}{Ndv}&#x3D;f(v) &#x3D; 4\pi \left( \frac{m}{2\pi kT} \right)^{\frac{3}{2}}exp({-\frac{mv^2}{2kT}}) v^2$$</li>
+<li>积分式：<br>$$ \Delta N &#x3D; \int_{v_1}^{v_2} N f(v) dv $$<br>$$ N &#x3D; \int_{0}^{ \infty } N f(v) dv $$</li>
+<li>归一化条件：<br>$$ \int_{0}^{\infty} f(v) dv &#x3D; 1 $$ </li>
+<li>$ v $ 有关的平均值：<br>$$ \overline{v} &#x3D; \int_{0}^{\infty} v f(v) dv &#x3D; \sqrt{\frac{8kT}{\pi m_0}}&#x3D;\sqrt{\frac{8RT}{\pi M}}$$<br>$$ v_{rms} &#x3D; \sqrt{\overline{v^2}} &#x3D; \sqrt{\int_{0}^{\infty} v^2 f(v) dv} &#x3D; \sqrt{\frac{3kT}{m_0}}&#x3D;\sqrt{\frac{3RT}{M}} $$<br>$$ v_p &#x3D; \frac{df(v)}{dv} &#x3D; \sqrt{\frac{2kT}{m_0}} &#x3D; \sqrt{\frac{2RT}{M}} $$</li>
+</ul>
+<h4 id="分子运动"><a href="#分子运动" class="headerlink" title="分子运动"></a>分子运动</h4><p><strong>分子碰撞和平均自由程</strong></p>
+<p>假定只有一个分子以平均相对速率 $ \overline{v_r} &#x3D; \sqrt{2} \overline{v} $ 运动，该分子在单位时间内扫过一个长度为 $\overline{v_r} $ ,横截面积为 $ \pi d^2 $的圆柱体（分子体积忽略，不必对折柱体进行修正），所有处于该圆柱体中的分子都将与之碰撞。设单位体积内分子数为 $ n $ ，则平均碰撞频率$ \overline{Z} $为<br>$$ \overline{Z}&#x3D;\pi d^2 \overline{v_r} n $$<br>由于单位时间内每个分子平均走过的路程为 $ \overline{v} $ ，而平均碰撞频率为 $ \overline{Z} $，则分子平均自由程 $ \overline{\lambda}$ 为<br>$$ \overline{\lambda} &#x3D; \frac{\overline{v}}{\overline{Z}} &#x3D; \frac{1}{\sqrt{2} \pi d^2 n} &#x3D; \frac{kT}{\sqrt{2} \pi d^2 p}$$<br>注意，当分子间距极小时分子间斥力很大，两分子质心间的最小距离的平均值是 $d$ ，即有效直径，并不代表每个分子的直径为 $ d $。当气体密度一定时，分子的有效直径随温度的增加而减小，所以当 $ T&#x2F;p $ 一定时，$\overline{\lambda}$ 将随温度的升高而略有增加。</p>
+<h3 id="真实气体"><a href="#真实气体" class="headerlink" title="真实气体"></a>真实气体</h3><h4 id="范德瓦尔斯方程"><a href="#范德瓦尔斯方程" class="headerlink" title="范德瓦尔斯方程"></a>范德瓦尔斯方程</h4><p>$$ \left(p + \nu^2\frac{a}{V^2} \right) (V - \nu b) &#x3D; \nu RT $$<br>分子间引力所引起的修正 $ a (atm \cdot L^2 \cdot mol^{-2}) $ 。<br>分子体积所引起的修正 $ b (L \cdot mol^{-1}) $ 。</p>
+<h4 id="输运现象"><a href="#输运现象" class="headerlink" title="输运现象"></a>输运现象</h4><p><strong>具有明显的单方向性——熵增加原理</strong></p>
+<p><strong>黏滞现象</strong></p>
+<ul>
+<li>定义：各气层流速不相等时，在相邻两气层的接触面上形成一对阻碍两气层相对运动的等值反向的摩擦力，即黏性力。气体的这种性质叫做黏性。</li>
+<li>$$ |F| &#x3D;\eta \frac{du}{dy} \delta S $$<br>动力黏度 $ \eta &#x3D; \frac{1}{3} ρ \overline{v} \overline{\lambda} $ 。<br>流速梯度 $ \frac{du}{dy} $ 指流速在它变化最大方向上每单位间距上的增量。</li>
+<li>原因：每时每刻都有基本等量的气体分子自上而下和自下而上地穿过沿气体流向的任一平面，使每秒内都有定向动量在垂直于流速的方向上向流速较小的气层净输运。</li>
+</ul>
+<p><strong>热传导现象</strong></p>
+<ul>
+<li>定义：如果气体内各部分的温度不同，从温度较高处向温度较低处，将有热量的传递，这一现象叫热传导现象。</li>
+<li>$$ \frac{\delta Q}{\delta t} &#x3D; - \kappa \frac{dT}{dx} \delta S $$<br>热导率 $ \kappa &#x3D; \frac{1}{3} \frac{C_{V,m}}{M} ρ \overline{v} \overline{\lambda} $ 。<br>温度梯度 $ \frac{dT}{dx} $ 指在温度变化最大的方向上气体温度的空间变化率。<br>$ - $ 表示热量传递的方向是从高温处传向低温处，和温度梯度的方向相反。</li>
+<li>原因：热层中分子平均动能较大，冷层中分子平均动能较小。冷热两层分子互相掺和与相互碰撞，使得从热层到冷层出现热运动能量的净运输。</li>
+</ul>
+<p><strong>扩散现象</strong></p>
+<ul>
+<li>定义：如果容器中各部分的气体种类不同，或同一种气体在容器中各部分的密度不同，经过一段时间后，容器中各部分的气体成分以及气体的密度都将趋向均匀一致，这种现象叫做扩散现象。</li>
+<li>$$ \frac{\delta M}{\delta t} &#x3D; -D \frac{dρ}{dx} \delta S $$<br>扩散系数 $ D &#x3D; \frac{1}{3} \overline{v} \overline{\lambda} $ 。<br>密度梯度 $ \frac{dρ}{dx} $ 指沿密度变化最大的方向气体密度的空间变化率。<br>$ - $ 表示气体的扩散方向是从密度大处向密度小处，和密度梯度的方向相反。</li>
+<li>原因：分子的无规则运动使得既有分子从密度较高处向密度较低处运动，也有反方向运动。因为密度高处分子数较多，所以从密度高处到密度低处出现质量的净运输。</li>
+</ul>
+<h2 id="晶体"><a href="#晶体" class="headerlink" title="晶体"></a>晶体</h2><p><strong>基本特征</strong></p>
+<ul>
+<li>组成晶体的粒子具有周期性的规则排列，用空间点阵表示。</li>
+<li><strong>在一定压强下具有固定的熔点</strong>。</li>
+</ul>
+<p>单晶体：</p>
+<ul>
+<li>内部粒子规则排列，具有天然规则的几何形状。</li>
+<li>不同方向上内部粒子排列情况不同，具有各向异性。</li>
+<li>同素异形体：同一个粒子形成不同的空间点阵，如石墨与金刚石。</li>
+</ul>
+<p>多晶体：</p>
+<ul>
+<li>由许多取向杂乱无章的晶粒组成，没有规则的几何形状，具有各向同性。</li>
+</ul>
+<p><strong>热运动</strong></p>
+<ul>
+<li>热振动：晶体中粒子在平衡位置附近的振动。热振动是晶粒热运动的主要表现形式。</li>
+<li>热膨胀现象：温度升高，粒子的热振动加剧，粒子间间距变大。</li>
+<li>热传导现象：非金属晶体的热传导是依靠热振动的能量从温度较高的区域通过粒子间相互作用向温度较低的区域传递。金属晶体的热传导是依靠大量的自由电子完成的。</li>
+<li>扩散现象：具有较大热振动能量的粒子脱离原位进入空位，从一个地方转移到另一个地方。晶体中的杂质同理。</li>
+</ul>
+<h2 id="液体"><a href="#液体" class="headerlink" title="液体"></a>液体</h2><p><strong>基本特征</strong></p>
+<ul>
+<li>分子间距较小，分子间作用力较大，不易被压缩。</li>
+<li>由大量数量级在 $ {10}^{-17} $ 保持规则排列的小区域无规则分布组成，表现出各向同性。</li>
+<li>液体分子在平衡位置附近做热振动，定居时间 $ τ $ 比在平衡位置附近的振动周期 $ τ_0 $ 大得多。</li>
+</ul>
+<p><strong>非晶体的微观结构与液体非常相似，可看作时黏滞性极大的液体</strong></p>
+<h3 id="表面现象"><a href="#表面现象" class="headerlink" title="表面现象"></a>表面现象</h3><p><strong>表面张力</strong></p>
+<ul>
+<li>方向：液体表层内的沿表面切线方向。</li>
+<li>$$ f&#x3D; \gamma l $$<br>$\gamma $ 为表面张力系数，与液体的种类和纯度，液面外物质的种类和温度有关。</li>
+<li>原因：液体中分子间作用力不可忽略，表面层液体分子所受合力指向液体内部，液体在靠近表面层时要克服引力做功所以表面层分子具有更大的势能，表面积越大，势能越大。<strong>由于一个系统达到稳定平衡时势能应为最小，所以液体分子间的作用力有使表面积减小的趋势</strong> ，即沿表面切线方向的表面张力。</li>
+</ul>
+<p><strong>润湿现象</strong></p>
+<ul>
+<li>规律：一般来说，化学性质相近的液体和固体有润湿现象，化学性质相差悬殊的液体和固体则不润湿。</li>
+<li>原因：液体与固体接触的附着层液体分子既受液体分子的吸引力，也受固体分子的吸引力。当固体分子对液体分子的吸引力大于液体分子间的吸引力时，液体分子进入附着层比在液体内部具有更小的势能，所以将有更多的液体分子进入附着层，形成一种展延倾向，即出现展延力，呈现润湿现象。反之则呈现不润湿现象。</li>
+<li>应用：经脱脂处理的棉易被水润湿；雨衣要用不易被水润湿的材料制作。</li>
+</ul>
+<p><strong>毛细现象</strong></p>
+<ul>
+<li>规律：润湿液体在毛细管内上升，不润湿液体在毛细管内下降。</li>
+<li>原因：润湿液体附着层有展延倾向，不润湿液体附着层有收缩倾向。</li>
+<li>应用：保存地下的水分要把土锄松，排出地下的水要把土压紧。</li>
+</ul>
+<h2 id="物态变化"><a href="#物态变化" class="headerlink" title="物态变化"></a>物态变化</h2><h3 id="熔化与凝固"><a href="#熔化与凝固" class="headerlink" title="熔化与凝固"></a>熔化与凝固</h3><p><strong>基本特征</strong></p>
+<ul>
+<li>晶体熔化时所吸收的能量全部用于破坏晶体的点阵结构，增加粒子间的势能，所以具有固定的熔化点和凝固点；非晶体熔化时所吸收的能量同时用于增加分子动能和分子间势能，所以没有固定的熔点。</li>
+<li>大多数物质熔化时体积膨胀，凝固时体积缩小，但水等物质相反。</li>
+<li>对于熔化时体积增大的物质，当压强增大时，破坏结构所需的能量增加，熔点升高；反之则压强越大，熔点越低。</li>
+<li>一般来说，纯物质中掺进另一种物质，熔点降低。</li>
+</ul>
+<p><strong>熔化热</strong></p>
+<ul>
+<li>定义：单位质量的某种物质在熔化成<strong>同温度</strong>的液体时<strong>吸收</strong>的热量。单位质量的某种物质凝固成<strong>同温度</strong>的固体时<strong>放出</strong>的热量等于其熔化热。</li>
+<li>$$ Q &#x3D; \lambda m $$<br>$ \lambda $ 表示熔化热。</li>
+</ul>
+<h3 id="汽化与液化"><a href="#汽化与液化" class="headerlink" title="汽化与液化"></a>汽化与液化</h3><p><strong>汽化</strong></p>
+<ul>
+<li>蒸发<ul>
+<li>依靠热运动动能较大的分子。</li>
+<li>蒸发和液化总是时时刻刻同时存在的。实际蒸发量是单位时间内液体分子逸出页面的数目与蒸气分子进入液面的分子数之差。</li>
+<li>蒸发速率与液体种类，液体表面积压强，温度，通风条件有关。</li>
+</ul>
+</li>
+<li>饱和气<ul>
+<li>定义：当实际蒸发量为零，气、液两态达到平衡时的蒸气叫做饱和气。饱和气的压强叫做饱和蒸气压。</li>
+<li>饱和蒸气压与温度，液体种类，液面弯曲程度有关。一般情况下，温度越高，液体挥发性越大，液面越凸，饱和蒸气压越大。</li>
+</ul>
+</li>
+<li>沸腾<ul>
+<li>条件：达到沸点，存在杂质或初始小气泡，且继续吸热。</li>
+<li>液体沸腾后温度不再上升，此时的温度称为液体的沸点。沸点与液体种类，气压有关。一般来说，气压越大，沸点越高。<blockquote>
+<p>可以利用不同液体沸点不同进行分馏。</p>
+</blockquote>
+</li>
+<li>因缺少杂质和初始小气泡，而加热到沸点以上也不沸腾的液体称为过热液体。过热液体易因为分子间彼此推开形成小空泡而爆沸。</li>
+</ul>
+</li>
+</ul>
+<p><strong>汽化热</strong></p>
+<ul>
+<li>定义：单位质量的某种物质在汽化成<strong>同温度</strong>的气体时<strong>吸收</strong>的热量。单位质量的某种物质液化成<strong>同温度</strong>的液体时<strong>放出</strong>的热量等于其汽化热。</li>
+<li>$$ Q &#x3D; L m$$<br>$ L $ 表示汽化热。</li>
+</ul>
+<h3 id="升华与凝华"><a href="#升华与凝华" class="headerlink" title="升华与凝华"></a>升华与凝华</h3><p><strong>基本特点</strong></p>
+<ul>
+<li>升华与凝华总是时时刻刻同时存在的。在某一确定温度下，当单位时间内升华与凝华的分子数近似相等时，就称为达到平衡。</li>
+<li>平衡时的蒸汽称为饱和蒸汽，其压强随温度的不同而不同。</li>
+</ul>
+<p><strong>升华热</strong></p>
+<ul>
+<li>定义：单位质量物质升华成<strong>同温度</strong>的蒸汽时<strong>吸收</strong>的热量。单位质量物质凝华成<strong>同温度</strong>的固体时<strong>放出</strong>的热量等于其升华热。</li>
+<li>$ l &#x3D; \lambda + L $ </li>
+<li>$$ Q &#x3D; l m $$<br>$ l $ 表示升华热。</li>
+</ul>
+<h3 id="三相点"><a href="#三相点" class="headerlink" title="三相点"></a>三相点</h3><p><strong>相</strong></p>
+<ul>
+<li>定义：物理性质均匀，并和其他部分有一定的分界面隔开的部分。<blockquote>
+<p>物态不等于物相，如金刚石和石墨是碳的两个固相。</p>
+</blockquote>
+</li>
+<li>物质的相与相之间的转变称为相变。</li>
+</ul>
+<p><strong>三相点</strong></p>
+<ul>
+<li>定义：同一物质固液气三相平衡共存的状态。</li>
+<li>水的三相点为 $ 4.581 mmHg $ 和 $ 273.16 K $ 。在三相点中，水既可以沸腾，也可以结冰。</li>
+</ul>
+<h3 id="湿度与露点"><a href="#湿度与露点" class="headerlink" title="湿度与露点"></a>湿度与露点</h3><p><strong>湿度</strong></p>
+<ul>
+<li>表示空气的干湿程度。</li>
+<li>绝对湿度：空气中所含水蒸气的分压强。</li>
+<li>相对湿度：一定温度下空气的绝对湿度与水的饱和蒸气压的百分比：<br>$$ \beta &#x3D; \frac{p}{P} \times 100 \% $$</li>
+</ul>
+<p><strong>露点</strong></p>
+<ul>
+<li>定义：在空气中水汽含量不变，保持气压一定的情况下，使空气冷却达到饱和时的温度。</li>
+<li>空气不在流动时大气中未饱和气的压强一定等于露点下的饱和蒸气压。</li>
+</ul>
+<p><strong>湿度计</strong></p>
+<ul>
+<li>露点湿度计：空气不在流动时大气中未饱和气的压强一定等于露点下的饱和蒸气压。</li>
+<li>干湿泡湿度计：水蒸发吸热。空气的相对湿度越大，两温度计温差越大。</li>
+<li>毛发湿度计：脱脂毛发吸湿伸长、变干缩短。</li>
+</ul>
+<h2 id="热力学定律"><a href="#热力学定律" class="headerlink" title="热力学定律"></a>热力学定律</h2><h3 id="热力学第零定律"><a href="#热力学第零定律" class="headerlink" title="热力学第零定律"></a>热力学第零定律</h3><p>如果两个物体都与确定状态的第三个物体处于热平衡，则该两个物体处于热平衡。</p>
+<p>温度是决定一个物体是否与其它物体处于热平衡的宏观性质。</p>
+<h3 id="热力学第一定律"><a href="#热力学第一定律" class="headerlink" title="热力学第一定律"></a>热力学第一定律</h3><p><strong>本质是能量转化与守恒定律</strong>。</p>
+<p><strong>热物理表述</strong><br>如果系统与外界同时发生做功和热传递的过程，那么系统的内能增量等于外界对系统所做的功和系统从外界吸收的热量之和：<br>$$ \Delta E &#x3D; Q + W $$</p>
+<p><strong>热工学表述</strong><br>外界对系统传递的热量，一部分是使系统的内能增加，另一部分是用于系统对外界做功：<br>$$ Q &#x3D;  \Delta E + A $$</p>
+<p><strong>微分式</strong><br>$$ \delta Q &#x3D; dE + \delta A $$</p>
+<p><strong>积分式</strong><br>$$ Q &#x3D; E_2 - E_1 + \int_{V_1}^{V_2} p(V) dV $$</p>
+<blockquote>
+<p>$\int_{V_1}^{V_2} p(V) dV$ 表示 $ p-V $ 图函数线与 $ x $ 轴围成的面积</p>
+</blockquote>
+<h3 id="热力学第二定律"><a href="#热力学第二定律" class="headerlink" title="热力学第二定律"></a>热力学第二定律</h3><p><strong>热功角度（开尔文叙述） ：</strong> 不可能制成一种循环动作的热机，只从一个热源吸取热量，使之<strong>全部</strong>变为有用的功，<strong>而不产生其他影响</strong>。</p>
+<p><strong>热传递角度（克劳修斯叙述） ：</strong> 热量不可能<strong>自动地</strong>从低温物体传向高温物体。</p>
+<h4 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h4><p><strong>热力学概率</strong></p>
+<ul>
+<li>定义：任一宏观状态所对应的微观状态数叫做该宏观状态的的热力学概率 $ W $ 。</li>
+<li>根据热力学第二定律，系统在一定条件下的平衡态对应于 $ W $ 为最大的宏观状态。非平衡态系统将向 $ W $ 增大的宏观状态过渡，最后达到的状态将是 $ W $ 十分接近或等于最大值的宏观平衡态。</li>
+</ul>
+<p><strong>熵</strong></p>
+<ul>
+<li>定义：熵是能量<strong>不可用</strong>程度的量度。</li>
+<li>定义式：<br>$$ S &#x3D; k ln(W) $$<blockquote>
+<p>$ k $ 就是 $ p&#x3D;nkT $ 中的 $ k $ 。</p>
+</blockquote>
+</li>
+<li>在可逆过程中，可以把 $\frac{\delta Q}{T}$ 看成系统的熵变。<strong>在一个可逆循环中，系统的熵变等于零</strong>：<br>$$ \oint \delta S_{可逆} &#x3D; \oint (\frac{\delta Q}{T})_{可逆} &#x3D; 0 $$</li>
+<li>熵增加原理：在封闭系统中发生的任何<strong>不可逆</strong>过程，都导致了整个系统熵的增加：<br>$$ {\Delta S}_{不可逆} &gt; 0 $$</li>
+</ul>
+<h2 id="热学的应用"><a href="#热学的应用" class="headerlink" title="热学的应用"></a>热学的应用</h2><h3 id="理想气体热力学过程"><a href="#理想气体热力学过程" class="headerlink" title="理想气体热力学过程"></a>理想气体热力学过程</h3><p><strong>等容过程</strong></p>
+<ul>
+<li>特征：$$ V&#x3D; 常量 $$ $$ Q &#x3D;  \Delta E $$</li>
+<li>过程方程： $$ \frac{p}{T}&#x3D; 常量 $$</li>
+<li>吸收热量 $ Q $：$$ \nu C_{V,m} (T_2-T_1) $$</li>
+<li>对外做功 $ A $：$$ 0 $$</li>
+<li>内能增量 $ \Delta E $：$$ \nu C_{V,m} (T_2-T_1) $$</li>
+<li>摩尔热容 $ C_m $：$$ C_{V,m} $$</li>
+</ul>
+<p><strong>等压过程</strong></p>
+<ul>
+<li>特征：$$ p&#x3D; 常量 $$ </li>
+<li>过程方程：$$ \frac{V}{T}&#x3D; 常量 $$</li>
+<li>吸收热量 $ Q $：$$ \nu C_{p,m} (T_2-T_1) $$</li>
+<li>对外做功 $ A $：$$ p(V_2-V_1) $$ $$ 或 $$ $$ \nu R (T_2-T_1) $$</li>
+<li>内能增量 $ \Delta E $：$$ \nu C_{V,m} (T_2-T_1) $$</li>
+<li>摩尔热容 $ C_m $： $$ C_{p,m}&#x3D;C_{V,m}+R $$</li>
+</ul>
+<p><strong>等温过程</strong></p>
+<ul>
+<li>特征：$$ T&#x3D; 常量 $$ $$ Q &#x3D; A $$</li>
+<li>过程方程：$$ pV&#x3D; 常量 $$ </li>
+<li>吸收热量 $ Q $：$$ \nu RT ln \frac{V_2}{V_1} $$ $$ 或 $$ $$ \nu RT ln \frac{p_1}{p_2} $$</li>
+<li>对外做功 $ A $：$$ \nu RT ln \frac{V_2}{V_1} $$ $$ 或 $$ $$ \nu RT ln \frac{p_1}{p_2} $$</li>
+<li>内能增量 $ \Delta E $：$$ 0 $$</li>
+<li>摩尔热容 $ C_m $: $$ \infty $$</li>
+</ul>
+<p><strong>绝热过程</strong></p>
+<ul>
+<li>特征：$$ \delta Q &#x3D;0 $$</li>
+<li>过程方程： $$ pV^{\gamma} &#x3D; 常量 $$ $$ V^{\gamma -1}T&#x3D; 常量 $$ $$ p^{\gamma -1}T^{- \gamma}&#x3D; 常量 $$</li>
+<li>吸收热量 $ Q $： $$ 0 $$</li>
+<li>对外做功 $ A $： $$ - \nu C_{V,m} (T_2-T_1) $$ $$ 或 $$ $$ \frac{p_1 V_1 - p_2 V_2}{\gamma -1} $$ </li>
+<li>内能增量 $ \Delta E $： $$ \nu C_{V,m} (T_2-T_1) $$</li>
+<li>摩尔热容 $ C_m $： $$ 0 $$</li>
+</ul>
+<p><strong>多方过程</strong></p>
+<ul>
+<li>特征：$$ 无 $$</li>
+<li>过程方程：$$ pV^{n} &#x3D; 常量 $$ $$ V^{n-1}T&#x3D; 常量 $$ $$ p^{n-1}T^{-n}&#x3D; 常量 $$</li>
+<li>吸收热量 $ Q $：$$ A + \Delta E $$</li>
+<li>对外做功 $ A $： $$ \frac{p_1 V_1 - p_2 V_2}{n-1} $$</li>
+<li>内能增量 $ \Delta E $： $$ \nu C_{V,m} (T_2-T_1) $$</li>
+<li>摩尔热容 $ C_m $： $$ C_{n,m}&#x3D;C_{V,m} + \frac{R}{1-n} $$</li>
+</ul>
+<h3 id="卡诺循环和卡诺定理"><a href="#卡诺循环和卡诺定理" class="headerlink" title="卡诺循环和卡诺定理"></a>卡诺循环和卡诺定理</h3><p><strong>卡诺循环</strong></p>
+<ul>
+<li>在两个温度恒定的热源(高温热源为 $T_1$ ,低温热源为 $T_2$)之间工作的准静态循环过程。在此过程中，工质只和高温热源或低温热源交换能量，没有额外能量散失。</li>
+<li>循环过程：等温膨胀 $ \to $ 绝热膨胀 $ \to $ 等温压缩 $ \to $ 绝热压缩。</li>
+<li>卡诺热机的效率为：<br>$$ {\eta }_c &#x3D; 1 - \frac{Q_2}{Q_1} &#x3D;  1 - \frac{T_2}{T_1} $$</li>
+<li>卡诺逆循环的制冷系数为：<br>$$ w_c &#x3D; \frac{Q_2}{A} &#x3D; \frac{Q_2}{Q_1 - Q_2} &#x3D; \frac{T_2}{T_1-T_2}$$</li>
+<li>卡诺循环的效率总是小于 $ 1 $ 的。（除非 $T_2 \to 0K$ 或 $T_2 \to \infty K$）</li>
+</ul>
+<p><strong>卡诺定理</strong></p>
+<ul>
+<li>在同样的高低温热源间工作的一切<strong>可逆机</strong>，不论用什么工作物，效率都等于 $ (1 - \frac{T_2}{T_1} )$。</li>
+<li>在同样的高低温热源间工作的一切<strong>不可逆机</strong>的效率一定<strong>小于</strong>可逆机。<blockquote>
+<p>不可逆机 &#x3D; 理想可逆机 + 不可逆耗散。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="电磁学"><a href="#电磁学" class="headerlink" title="电磁学"></a>电磁学</h1><h2 id="电场"><a href="#电场" class="headerlink" title="电场"></a>电场</h2><h3 id="物质的电性"><a href="#物质的电性" class="headerlink" title="物质的电性"></a>物质的电性</h3><p><strong>基元电荷</strong><br>电子所带的负电的电量是最小电量，把这个最小电量称为基元电荷，$ e &#x3D; 1.6 \times 10^{-19} C $ 。<br>电荷量的这种只能取分立的、不连续量值的性质，称为电荷的量子化。</p>
+<p><strong>导体</strong></p>
+<ul>
+<li>导电原理：<ul>
+<li>金属依靠自由电子导电。</li>
+<li>溶液依靠正、负离子导电。</li>
+<li>气体依靠自由运动的正、负离子和电子导电。</li>
+</ul>
+</li>
+<li>静电感应：一个带电体靠近导体，使导体靠近带电体的一端带异种电荷，远离的一端带同种电荷的过程。产生感生电荷后，当金属中的自由电子收到带电体和感生电荷的电力平衡时，就不再运动。</li>
+</ul>
+<p><strong>半导体</strong></p>
+<ul>
+<li>导电原理：依靠成对产生的自由电子和空穴导电。</li>
+<li>电子型（ n 型）半导体：在四价元素硅中掺入五价元素形成共价键，五价原子多余的一个电子会脱离原子而成为自由电子，使半导体内的自由电子密度增加，主要依靠带负电的自由电荷导电。</li>
+<li>空穴型（ p 型）半导体：在四价元素硅中掺入三价元素形成共价键，由于附近的四价原子的电子填补缺少的电子而在电子的原位形成空穴，相当于一个正电荷，使半导体内的空穴密度增加，主要依靠带正电的空穴导电。</li>
+</ul>
+<p><strong>电介质</strong></p>
+<ul>
+<li>分子类型：<ul>
+<li>极性分子：正电荷的中心与负电荷的中心不重合的分子。</li>
+<li>非极性分子：正电荷的中心与负电荷的中心重合的分子。</li>
+</ul>
+</li>
+<li>电介质的极化：一个带电体靠近电解质，极性分子在力偶的作用下发生旋转，非极性分子两电荷中心产生微小的分离，使电介质靠近带电体的表面上呈现异种电荷，远离带电体的表面上呈现同种电荷的现象。</li>
+</ul>
+<p><strong>电荷守恒定律</strong><br>对于一个封闭的系统，所有正电荷和负电荷的电量的<strong>代数和</strong>总是保持不变。</p>
+<h3 id="电荷力"><a href="#电荷力" class="headerlink" title="电荷力"></a>电荷力</h3><p><strong>库仑定律</strong><br>真空中两个点电荷之间的作用力跟它们的电量乘积成正比，跟它们之间的距离的平方成反比，作用力的方向沿着它们的连线：<br>  $$ F &#x3D; k \frac{ q_1 q_2 }{r^2} $$<br>  $$ \vec{F_q} &#x3D; k \frac{Q q }{r^3} \vec{r_{Qq} } $$<br>  静电力常量 $ k &#x3D; \frac{1}{4 \pi {\epsilon}_0 } &#x3D; 9.0 \times 10^9 (N·m^2&#x2F; C^2) $。</p>
+<h3 id="电场-1"><a href="#电场-1" class="headerlink" title="电场"></a>电场</h3><p><strong>静电场是有源的保守力场，属于无旋场。</strong></p>
+<p><strong>电场强度</strong><br>把放在电场中某点的检验电荷所受的电场力与它的电量的比值定义为电场中该点的电场强度，正电荷在某点的受力方向为该点的场强方向：<br>  $$ \vec{E} &#x3D; \frac{ \vec{F} }{ q_0 }&#x3D; k \frac{Q}{r^2} \vec{e_r} $$</p>
+<p><strong>电力线</strong></p>
+<ul>
+<li>定义：用来表示电场方向的带箭头的曲线称为电力线。</li>
+<li>特征：<ul>
+<li>电力线从正电荷或无穷远处出发，终止于负电荷或无穷远处。</li>
+<li>电力线上每点的切线方向表示该点的场强方向。</li>
+<li>电力线在电场中永不相交。</li>
+<li>场强较大的地方电力线较密，场强较小的地方电力线较疏。</li>
+</ul>
+</li>
+</ul>
+<p><strong>电通量</strong><br>穿过某一面积的电力线数叫穿过该面积的电通量。<br>$$ \Psi_E &#x3D;  \oint_S \vec{E} \cdot d\vec{S} $$</p>
+<p><strong>高斯定理</strong><br>静电场中，通过任一闭合曲面的电通量等于该曲面<strong>内</strong>电荷的代数和除以真空介电常量：<br>  $$ \oint_S \vec{E} \cdot d\vec{S} &#x3D; \frac{1}{ {\epsilon}_0 } \Sigma q_i$$</p>
+<ul>
+<li>注意电荷和电场的分布的对称性。</li>
+<li>闭合曲面的选择：<ul>
+<li>电场强度垂直于曲面且处处相等。</li>
+<li>电场强度平行于曲面。</li>
+</ul>
+</li>
+</ul>
+<h3 id="电势"><a href="#电势" class="headerlink" title="电势"></a>电势</h3><p>把检验电荷在电场中某点的电势能与它的电量的比值叫做该点的电势：<br>$$ V_a &#x3D; \frac{E_{pa} }{q}  $$<br>把电场力对检验电荷所做的功与它的电量的比值叫做终点与起点间的电势差：<br>$$ U_{ab} &#x3D; V_a - V_b &#x3D; \frac{ W_{ab} }{q}  $$</p>
+<ul>
+<li><strong>电势不是电势能</strong>。</li>
+<li>电场中某点的电势等于该点与零电势点间的电压。</li>
+<li>电压在数值上等于电场中移动单位电荷时电场力所做的功。</li>
+<li>在<strong>电场力</strong>做正功时，正电荷总是从电势高的地方向电势低的地方移动，负电荷总是从电势低的地方向电势高的地方移动。</li>
+<li>电场中电势相等的各点组成的面叫做等势面。</li>
+</ul>
+<p><strong>点电荷电场中的电势</strong><br>在真空的点电荷电场中，如果以离场源电荷无穷远处电势为零，则电荷在离场源电荷 $ r $ 处的电势为：<br>$$ V &#x3D; k \frac{Q}{r} $$<br>以无穷远处电势为零时，多个点电荷的电场中某点的电势等于各点电荷单独存在时该点的电势的代数和。</p>
+<p><strong>电势差与电场强度的关系</strong><br>在匀强电场中两点间的电势差等于电场强度和这两点沿电场方向的距离：<br>$$ U_{AB} &#x3D; \vec{E} \cdot \vec{d} $$</p>
+<h3 id="静电场中的导体"><a href="#静电场中的导体" class="headerlink" title="静电场中的导体"></a>静电场中的导体</h3><p><strong>导体的静电平衡</strong></p>
+<ul>
+<li>条件：<ul>
+<li>导体内部场强为零。</li>
+</ul>
+</li>
+<li>特征：<ul>
+<li>导体处于静电平衡时，导体表面的电场强度必定垂直于导体表面，整个导体是等势体。</li>
+<li>导体处于静电平衡时，电荷只分布在导体的外表面，曲率越大的地方电荷的面密度越大，电场越强。</li>
+</ul>
+</li>
+</ul>
+<h3 id="电容"><a href="#电容" class="headerlink" title="电容"></a>电容</h3><p>孤立导体所带的电量与它的电势的比值叫做电容。电容表示导体存储电荷的能力。<br>$$ C &#x3D; \frac{Q}{U} $$<br>真空中孤立球形导体的电容为 $ C &#x3D; \frac{R}{k} $</p>
+<p><strong>平行板电容器的电容</strong><br>平行板电容器的电容随两板之间的距离的增大而减小，随两级正对面积的增大而增大。<br>$$ C&#x3D; \frac{ {\epsilon}_r S }{4 \pi k d } &#x3D; \frac{ {\epsilon}_0 {\epsilon}_r S }{d} $$</p>
+<ul>
+<li>真空电容率 ${\epsilon}_0$ 。</li>
+<li>相对介电常量 $ {\epsilon}_r $：<ul>
+<li>定义：以该材料为介质与以真空为介质制成的同尺寸电容器电容量之比。</li>
+<li>$$  \epsilon_r &#x3D; \frac{\epsilon}{\epsilon_0} &#x3D; \frac{ C_{介质} }{ C_{真空} } &#x3D; \frac{ E_{真空} }{ E_{介质} } $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>充电和放电</strong></p>
+<ul>
+<li>充电：<ul>
+<li>电源将一个极板上的电子转移到另一个极板上，使两个极板带等量的正负电荷，同时两板间电压不断增大至电源电压。</li>
+<li>对于与电阻 $R$ 串联接在电源 $V_S$ 上的电容器：<br>$$  V_C(t) &#x3D; V_S (1 - e^{-t&#x2F;RC}) $$<br>$$  i(t) &#x3D; I_0 e^{-t&#x2F;RC} $$</li>
+</ul>
+</li>
+<li>与电源相连的电容器满足 $U$ 不变 $Q$ 变。</li>
+<li>放电：<ul>
+<li>用导线连接电容器的两极，使两极板上的电荷通过导线互相中和，使电容器上的电荷消失。</li>
+<li>对于与电阻 $R$ 串联的电容器：<br>$$  V_C(t) &#x3D; V_0 e^{-t&#x2F;RC} $$<br>$$  i(t) &#x3D; -\frac{V_0}{R} e^{-t&#x2F;RC} $$</li>
+</ul>
+</li>
+<li>不与电源相连的电容器满足 $Q$ 守恒 $U$ 变。</li>
+</ul>
+<h3 id="电场能"><a href="#电场能" class="headerlink" title="电场能"></a>电场能</h3><p><strong>电容器的能量</strong><br>$$ E_e &#x3D; \frac{1}{2} QU &#x3D; \frac{1}{2} \frac{Q^2}{C} &#x3D; \frac{1}{2} CU^2 $$<br>电容器的能量是储存在电场中的。</p>
+<p><strong>电场能</strong><br>$$ E_e &#x3D; \frac{1}{2} CU^2 &#x3D; \frac{1}{2} \frac{ \epsilon_r S }{ 4 \pi kd } (Ed^2) &#x3D; \frac{ \epsilon_r }{8 \pi k} E^2 Sd $$</p>
+<p><strong>电场能密度</strong><br>表示单位体积的电场能。<br>在一定的材质中，无论电场均匀与否，电场能密度与场强的平方成正比。<br>$$ w_e &#x3D;\frac{E_e}{V} &#x3D; \frac{E_e}{Sd} &#x3D; \frac{ \epsilon_r }{8 \pi k} E^2 &#x3D; \frac{1}{2} \epsilon E^2 $$</p>
+<h2 id="恒定电流"><a href="#恒定电流" class="headerlink" title="恒定电流"></a>恒定电流</h2><h3 id="电流"><a href="#电流" class="headerlink" title="电流"></a>电流</h3><ul>
+<li>产生条件：<ul>
+<li>真空中有连续的电子流。</li>
+<li>导体中有自由电荷且存在电场。</li>
+</ul>
+</li>
+<li>规定正电荷的运动方向是电流的方向。</li>
+</ul>
+<p><strong>电流强度</strong><br>单位时间内通过导体某一横截面的电量。<br>$$ I &#x3D; \frac{dQ}{dt}  &#x3D; neSv $$</p>
+<p><strong>电流密度</strong><br>通过导体单位截面的电流。<br>对于一定温度下的某种金属材料，当有电流通过时，电流密度与电场强度成正比。<br>$$ j &#x3D; \frac{I}{S} &#x3D; \frac{1}{2} \frac{n e^2 \tau }{m} E  &#x3D; \sigma E $$<br>电导率 $ \sigma &#x3D; \frac{1}{2} \frac{n e^2 \tau }{m} (S \cdot m^{-1}) $</p>
+<p><strong>恒定电流</strong></p>
+<ul>
+<li>恒定电场：当电场恒定时，导体内的电荷只分布在表面或不同导体的界面上，均匀导体内部没有净电荷；无论导线弯曲成什么形状，电力线是连续不断的，在表面附近与导体表面平行。</li>
+<li>电流的连续性原理：单位时间内流入某一段导体的电量与流出的电量相等。</li>
+</ul>
+<h3 id="电路实验定律"><a href="#电路实验定律" class="headerlink" title="电路实验定律"></a>电路实验定律</h3><p><strong>焦耳定律</strong><br>通电导体中产生的热量与电流强度的平方成正比，与通电时间成正比。<br>$$  Q &#x3D; R \times I^2 \times t $$<br>$$ P_{热} &#x3D; R \times I^2 $$<br>电阻 $R &#x3D; \frac{P_{热} }{ I^2 } $ ，反映了除超导体以外，任何导体都有在通电时把电能转化为热的性质。</p>
+<p><strong>欧姆定律</strong><br>通过<strong>纯电阻</strong>的电流与电阻两端电压成正比，与电阻的阻值成反比。<br>$$ I &#x3D; \frac{U}{R} $$<br>符合欧姆定律的电学器件叫做线性电阻元件，不符合欧姆定律的电学器件叫做非线性电阻元件。</p>
+<p><strong>电阻定律</strong><br>同一种材料制成的导线，其电阻与长度成正比，与横截面积成反比。<br>$$ R &#x3D; \rho \frac{l}{S} $$<br>电阻率 $ \rho &#x3D; { \rho }_0 (1+ \alpha t) &#x3D; \frac{1}{ \sigma } ( \Omega \cdot m ) $<br>热敏电阻（电子运动速率）和光敏电阻（内光电效应）都是半导体。</p>
+<p><strong>法拉第电解定律</strong></p>
+<ul>
+<li>电解：当电流通过电解液时，溶液中的阳离子向阴极运动得到电子，阴离子向阳极运动失去电子，使得有物质在极板上析出的过程。</li>
+<li>法拉第电解第一定律：电解时析出物质得质量与通过得电量成正比。<br>$$ m &#x3D; kq $$<br>电化当量 $k$。</li>
+<li>法拉第电解第二定律：物质得电化当量与它的化学当量成正比。<br>$$ k &#x3D; \frac{1}{F} \frac{ \mu }{n} $$<br>法拉第常量 $F&#x3D; N_A e &#x3D; 96500 (C) $</li>
+<li>$$  \frac{m}{ \mu } &#x3D; \frac{q}{Fn}  $$<br>对于 $n$ 价原子，产生一摩尔物质得电量为 $nF$。</li>
+</ul>
+<h3 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h3><ul>
+<li>原理：提供<strong>非静电力</strong>，使正电荷从电势低处移向电势高处，</li>
+</ul>
+<p><strong>电动势</strong><br>电源内单位正电荷从负极移到正极时<strong>非静电力</strong>所做的功。<br>$$  ℰ &#x3D; \frac{W_{非} }{q} &#x3D; U_{断} $$</p>
+<p><strong>内阻</strong><br>电源内部电阻。一个电源可以看作一个电动势与一个内阻的串联。<br>对于考虑内阻的纯电阻电路：<br>$$ I &#x3D; \frac{ℰ}{R+r} $$</p>
+<h3 id="电路的能量"><a href="#电路的能量" class="headerlink" title="电路的能量"></a>电路的能量</h3><p><strong>输出功率与供电效率</strong><br>$$ P&#x3D;UI $$<br>$$ P_{总} &#x3D; I ℰ $$<br>$$ P_{输出} &#x3D; IU_{路端} $$<br>$$ \eta &#x3D; \frac{P_{输出} }{P_{总} } \times 100 \% $$<br>对于纯电阻电路：<br>$$ P_{输出} &#x3D; IU_{路端} &#x3D; \frac{ℰ^2 R}{ (R+r)^2 } $$<br>$$ \eta &#x3D; \frac{R}{R+r} \times 100 \% $$</p>
+<p><strong>输出功率的最大值</strong><br>对于纯电阻电路：<br>$$ P_{输出} &#x3D; IU_{路端} &#x3D; \frac{ℰ^2 R}{ (R+r)^2 } &#x3D; \frac{ℰ^2}{ \frac{(R-r)^2}{R}+4r } $$<br>$$ (P_{最大输出} &#x3D; \frac{ℰ^2}{4r})_{R&#x3D;r} $$</p>
+<ul>
+<li>在应用中应灵活选择 $r$ 。例如，可以选取外电路的定值电阻与电源内阻之和为 $r$ 。</li>
+<li>当输出功率最大时，电路的供电效率只有 $50 \% $ ，可见供电效率高和输出功率大是相矛盾的。</li>
+</ul>
+<h3 id="连接与测量"><a href="#连接与测量" class="headerlink" title="连接与测量"></a>连接与测量</h3><p><strong>串并联，看电势。</strong></p>
+<p><strong>电源</strong></p>
+<ul>
+<li>串联：<ul>
+<li>$$  ℰ_{串} &#x3D;\Sigma ℰ_i $$</li>
+<li>$$  r_{串} &#x3D;\Sigma r_i $$</li>
+</ul>
+</li>
+<li>并联：<ul>
+<li>$$  ℰ_{并} &#x3D;ℰ $$</li>
+<li>$$  r_{并} &#x3D;\frac{r}{n} $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>电容器</strong></p>
+<ul>
+<li>串联：<ul>
+<li>$$  \frac{1}{C_{串} } &#x3D; \Sigma \frac{1}{C_i} $$</li>
+<li>$$  Q_1 &#x3D;Q_2 &#x3D;···&#x3D; Q_n $$</li>
+<li>$$  U_{串} &#x3D; \Sigma U_i &#x3D; \frac{Q}{C_{串} } $$</li>
+</ul>
+</li>
+<li>并联：<ul>
+<li>$$  C_{并} &#x3D; \Sigma C_i $$</li>
+<li>$$  U_1 &#x3D;U_2 &#x3D;···&#x3D; U_n $$</li>
+<li>$$  Q_{并} &#x3D; \Sigma Q_i &#x3D; U C_{并} $$</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意电量的正负性！</p>
+</blockquote>
+<p><strong>电阻</strong></p>
+<ul>
+<li>串联：<ul>
+<li>$$  R_{串} &#x3D; \Sigma R_i $$</li>
+<li>$$  I_1 &#x3D;I_2 &#x3D;···&#x3D; I_n $$</li>
+<li>$$  U_{串} &#x3D; \Sigma U_i &#x3D; I R_{串} $$</li>
+<li>$$  Q_1:Q_2:···:Q_n &#x3D; P_1:P_2:···:P_n &#x3D; U_1:U_2:···:U_n &#x3D; R_1:R_2:···:R_n $$</li>
+</ul>
+</li>
+<li>并联：<ul>
+<li>$$  \frac{1}{R_{并} } &#x3D; \Sigma \frac{1}{R_i} $$</li>
+<li>$$  U_1 &#x3D;U_2 &#x3D;···&#x3D; U_n $$</li>
+<li>$$  Q_1:Q_2:···:Q_n &#x3D; P_1:P_2:···:P_n &#x3D; I_1:I_2:···:I_n &#x3D; \frac{1}{R_1}:\frac{1}{R_2}:···:\frac{1}{R_n} $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>电感器</strong></p>
+<ul>
+<li>串联：<ul>
+<li>$$  L_{} &#x3D; \Sigma L_i $$</li>
+<li>$$  \frac{dI_1}{dt} &#x3D; \frac{dI_2}{dt} &#x3D;···&#x3D; \frac{dI_n}{dt} $$</li>
+<li>$$  U_{串} &#x3D; \Sigma U_i &#x3D; L_{串} \frac{dI}{dt} $$</li>
+</ul>
+</li>
+<li>并联：<ul>
+<li>$$  \frac{1}{L_{并} } &#x3D; \Sigma \frac{1}{L_i} $$</li>
+<li>$$  U_1 &#x3D;U_2 &#x3D;···&#x3D; U_n $$</li>
+<li>$$  I_{并} &#x3D; \Sigma I_i &#x3D; \frac{U}{L_{并} } t $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>电流表</strong></p>
+<ul>
+<li>由电流计和分流电阻并联而成。</li>
+<li>设量程为电流计的 $n$ 倍：<br>$$ I&#x3D;nI_g $$<br>$$ R&#x3D;\frac{1}{n} R_g $$<br>$$ I_r&#x3D;(n-1)I_g $$<br>$$ R_r&#x3D;\frac{1}{n-1} R_g $$</li>
+<li>理想电流表：短路。</li>
+</ul>
+<p><strong>电压表</strong></p>
+<ul>
+<li>由电流计和分压电阻串联而成。</li>
+<li>设量程为电流计的 $n$ 倍：<br>$$ U &#x3D; n U_g $$<br>$$ R &#x3D; n R_g $$<br>$$ U_r &#x3D; (n-1) U_g $$<br>$$ R_r &#x3D; (n-1) R_g $$</li>
+<li>理想电压表：断路。</li>
+</ul>
+<h3 id="基尔霍夫方程组"><a href="#基尔霍夫方程组" class="headerlink" title="基尔霍夫方程组"></a>基尔霍夫方程组</h3><ul>
+<li>节点定则：流入任何一个节点的总电流必定等于流出该节点的总电流，汇集在节点的电流代数和为零。</li>
+<li>回路定则：各部分电势升高的总和与电势降低的总和相等，沿闭合回路的电势变化代数和为零。<blockquote>
+<p>列式带着 $ ℰ $。</p>
+</blockquote>
+</li>
+<li>在列新的方程时引入一个不同于已列方程所包含的电子元件，则新的方程是独立的。一般地，对于一个有 $n$ 个回路和 $m$ 个节点的电路，最多能列出 $n-m+1$ 个独立的回路方程。</li>
+</ul>
+<h2 id="磁场"><a href="#磁场" class="headerlink" title="磁场"></a>磁场</h2><h3 id="物质的磁性"><a href="#物质的磁性" class="headerlink" title="物质的磁性"></a>物质的磁性</h3><p><strong>磁性的本质</strong></p>
+<ul>
+<li>分子电流假说：组成磁性物质的每个分子或原子中都有一个环形电流，叫分子电流。它使每个粒子都成为一个极小的磁体，两极满足右手螺旋定则。当这些小磁体由取向杂乱无章到取向一致时，物质由不显磁性变为对外显出磁性。</li>
+<li>运动的电荷产生磁场。</li>
+</ul>
+<p><strong>磁介质</strong><br>定义：满足分子电流假说的物质。<br>磁介质在磁场中被磁化后：<br>$$ B &#x3D; B_0 + B’ $$</p>
+<ul>
+<li>顺磁质：在外磁场中能够被磁化，使 $B&gt;B_0$ ；磁性很弱，在外磁场撤去以后磁性消失。</li>
+<li>抗磁质：在外磁场中能够被磁化，使 $B&lt;B_0$ ；磁性很弱，在外磁场撤去以后磁性消失。</li>
+<li>铁磁质：在外磁场中能够被磁化，使 $B&gt;&gt;B_0$；磁性很强，有的能长时间保留磁性。<ul>
+<li>软磁材料：外磁场撤销后磁性很快消失。</li>
+<li>硬磁材料：外磁场撤销后能长时间保留磁性，必须加上较强的反向磁场才能去磁。</li>
+</ul>
+</li>
+</ul>
+<p><strong>磁化强度</strong><br>$$ \vec{M} &#x3D; \frac{\Sigma \vec{m_{分子}} + \Sigma \Delta \vec{m_{分子}}}{\Delta V} $$</p>
+<ul>
+<li>顺磁质：$\Sigma \Delta \vec{m_{分子}}$ 可以忽略，磁化后 $\vec{M}$ 与 $\vec{B}$ 方向一致。</li>
+<li>抗磁质：$\Sigma \vec{m_{分子}}&#x3D;0 $ ，磁化后 $\vec{M}$ 与 $\vec{B}$ 方向相反。</li>
+<li>真空：$ \vec{M} &#x3D;0 $。</li>
+</ul>
+<p><strong>磁导率</strong></p>
+<ul>
+<li>真空磁导率：$ \mu_0 $</li>
+<li>如果一个通电螺线管内部的磁感应强度为 $B_0$ ，当某种物质充满其中时磁感应强度为 $B$ ，则该物质的（相对）磁导率为：<br>$$\mu_r &#x3D; \frac{B}{B_0} &#x3D; \frac{\mu}{\mu_0} $$<br>顺磁质的磁导率略大于 $1$ ，抗磁质的磁导率略小于 $1$ ，铁磁质的磁导率数量级为 $10^2 ~ 10^6$ 。</li>
+</ul>
+<p><strong>磁化率</strong><br>$$ \chi_m &#x3D; \mu_r -1 $$</p>
+<h3 id="磁场-1"><a href="#磁场-1" class="headerlink" title="磁场"></a>磁场</h3><p><strong>磁感应强度</strong><br>磁场中某点磁感应强度是检验电荷以垂直于磁场方向的速度通过该点时所受的磁场力与它的电量及速度乘积的比值，也是穿过垂直于磁力线单位面积的磁力线数（磁通密度）：<br>$$ B &#x3D; \frac{F_m}{qv} (T) &#x3D; \frac{d \Psi_B}{d S} (Wb\cdot m^{-2}) $$</p>
+<p><strong>磁力线</strong></p>
+<ul>
+<li>定义：用来表示磁场方向的带箭头的曲线称为电力线。</li>
+<li>特征：<ul>
+<li>在磁场中某点放置的的小磁针北极所受磁场力的方向为该点的磁场方向。</li>
+<li>磁力线上每点的切线方向表示该点的场强方向。</li>
+<li>磁力线在磁场中永不相交。</li>
+<li>场强较大的地方磁力线较密，场强较小的地方磁力线较疏。</li>
+</ul>
+</li>
+</ul>
+<p><strong>磁通量</strong><br>穿过某一面积的磁力线数叫穿过该面积的磁通量。<br>$$ \Psi_B &#x3D; \oint_S \vec{B} \cdot d\vec{S} $$</p>
+<p><strong>毕奥-萨法尔定律</strong><br>$$ d \vec{B} &#x3D; \frac{ \mu_0}{4 \pi } \frac{ \vec{I} \times \vec{r} }{r^3} dl $$<br>$$ \vec{B} &#x3D; \int_{L} \frac{ \mu_0 }{4 \pi } \frac{I}{r^2} d\vec{l} \times \vec{e_r} $$</p>
+<ul>
+<li>直线电流的磁场：<ul>
+<li>右手螺旋定则：用右手握住导线，伸出拇指指电流方向，则四指所指的方向就是导线周围磁力线的方向。</li>
+<li>在很长的载流直导线中部附近的场点，磁感应强度大小与电流强度成正比，与该点到导线的垂直距离成反比：<br>$$ B &#x3D; k_m \frac{I}{r} $$<br>比例常量 $ k_m &#x3D; 2 \times 10^{-7} (T \cdot m \cdot A^{-1}) &#x3D; 2 \times 10^{-7} (N \cdot A^{-2}) $</li>
+</ul>
+</li>
+<li>通电螺线管的磁场：<ul>
+<li>右手螺旋定则：用右手握住螺线管，让四指指向电流方向，则大拇指所指的方向就是螺线管的北极方向。</li>
+<li>当螺线管的长度远大于半径时，在管内中间的匀强磁场的磁感应强度的大小为：<br>$$ B &#x3D; 2 \pi k_m n I $$<br>$ n $ 为螺线管每米长的线圈匝数。</li>
+</ul>
+</li>
+</ul>
+<p><strong>地磁场</strong></p>
+<ul>
+<li>形成原理：地球外核主要由铁和镍组成，在高温高压下呈液态；这些熔融金属通过对流运动形成电流，进而产生磁场。液态铁镍流体随地球自转产生对流，这种运动切割磁力线，激发电流；电流又强化磁场，形成一个自维持的电磁系统。</li>
+<li>特征：<ul>
+<li>产生的磁场类似大型磁铁。</li>
+<li>北极在地理南极附近，南极在地理北极附近。</li>
+</ul>
+</li>
+<li>磁偏角：地磁场北极方向与地理正北方向的夹角，也是磁子午面与地理子午面的夹角。</li>
+<li>磁子午面：与地理子午面夹角为磁偏角的<strong>竖直</strong>面。</li>
+<li>磁倾角：磁极指向与水平线的夹角。</li>
+</ul>
+<p><strong>磁场强度</strong><br>$$ \vec{H} &#x3D; \frac{\vec{B}}{\mu} &#x3D; \frac{\vec{B}}{\mu_0} - \vec{M} &#x3D;\frac{M}{\chi_m} $$<br>$$ B &#x3D; \mu_0 H + \mu_0 M &#x3D; \mu_0(1+\chi_m) H $$</p>
+<h3 id="磁场力"><a href="#磁场力" class="headerlink" title="磁场力"></a>磁场力</h3><p><strong>洛伦兹力</strong><br>在磁场中某点，运动电荷所受的洛伦兹力跟它的电量和它的垂直于磁场的速度的乘积成正比。<br>$$ \vec{F} &#x3D; q(\vec{v} \times \vec{B} ) $$</p>
+<p><strong>安培力</strong><br>$$ \vec{F} &#x3D; Il \vec{B} \sin \theta &#x3D; l(\vec{I} \times \vec{B} ) $$</p>
+<blockquote>
+<p>虽然电流是标量，但是在这里可以看作矢量，方向就是电流流向。</p>
+</blockquote>
+<ul>
+<li>两根平行的长直导线通电时，每单位长度上的相互作用力跟它们的电流的乘积成正比，跟它们间的距离成反比：<br>$$ \frac{F}{l} &#x3D; k_m \frac{I_1 I_2 }{r} $$</li>
+<li>在磁场中的 $N$ 匝电流环所受的力矩为：<br>$$ M &#x3D; NS( \vec{I} \times \vec{B}) $$</li>
+</ul>
+<h2 id="电磁感应"><a href="#电磁感应" class="headerlink" title="电磁感应"></a>电磁感应</h2><h3 id="楞次定律"><a href="#楞次定律" class="headerlink" title="楞次定律"></a>楞次定律</h3><p>当电感线圈外的磁场变化时，线圈内会产生感应电流。感应电流所产生的磁场总是起到反抗外界磁场变化的作用：<br>$$  \Delta  \Psi_{内} &#x3D; - \Delta \Psi_{外} $$<br>楞次定律是能量守恒定律的必然结果。</p>
+<h3 id="法拉第电磁感应定律"><a href="#法拉第电磁感应定律" class="headerlink" title="法拉第电磁感应定律"></a>法拉第电磁感应定律</h3><p>感应线圈所产生的感应电动势的数值等于外界磁场的磁通量对时间的一次导数。<br>$$ ℰ &#x3D; \frac{d \Psi_B }{dt} $$<br>根据楞次定律，感应电流产生的磁场方向于与外界磁场变化的方向相反，所以在式中加入负号表示方向相反。<br>$$ ℰ &#x3D; - \frac{d \Psi_B }{dt} $$</p>
+<ul>
+<li>动生电动势<br>动生电动势跟磁感应强度、切割磁感线的导线长度以及导线运动速度都成正比：<br>$$ ℰ_{动} &#x3D; l( \vec{v} \times \vec{B} ) $$</li>
+<li>感生电动势：<br>感生电动势跟线圈匝数、磁场面积以及磁场随时间的变化率都成正比：<br>$$ ℰ_{感} &#x3D; -N S \frac{dB}{dt} $$</li>
+</ul>
+<h3 id="自感"><a href="#自感" class="headerlink" title="自感"></a>自感</h3><p>定义：由于回路本身电流产生的磁通量发生变化，而在自己回路中激起感应电动势的现象。<br>当通过电感线圈的电流变化时，线圈所产生的磁场会随之变化。根据楞次定律，线圈中会产生一个与原电流方向相反的电流。<br>$$ ℰ &#x3D; -L \frac{dI}{dt} $$<br>电感 $L&#x3D;\frac{\Psi_N}{I}$。<br>对于通电螺线管，电感 $ L &#x3D; 2 \pi k_m n^2 l S (H) $。</p>
+<h3 id="互感"><a href="#互感" class="headerlink" title="互感"></a>互感</h3><p>定义：由于回路中的电流变化而在邻近另一个回路中产生感应电动势的现象。<br>如果两个回路相对位置固定不变，而且在其周围没有铁磁物质，则两个回路的互感等于其中一个回路中单位电流激发的磁场通过另一回路所围成面积的磁链：<br>$$ ℰ_{21} &#x3D; -M\frac{dI_1}{dt}  $$<br>$$ ℰ_{12} &#x3D; -M\frac{dI_2}{dt}  $$<br>互感系数 $M&#x3D;\frac{\Phi_{21}}{I_1} &#x3D; \frac{\Phi_{12}}{I_2} &#x3D; k \sqrt{L_1 L_2} $。<br>耦合因数 $ 0 \leq k \leq 1$。</p>
+<h3 id="磁场能"><a href="#磁场能" class="headerlink" title="磁场能"></a>磁场能</h3><p><strong>电感器的能量</strong><br>$$ E_m &#x3D; \frac{1}{2} LI^2 $$<br>电感器的能量是储存在磁场中的。</p>
+<p><strong>磁场能</strong><br>$$ E_m &#x3D; \frac{1}{2} LI^2 &#x3D; \frac{1}{2} (2 \pi k_m n^2 lS) I^2 &#x3D; \pi k_m n^2 I^2 lS &#x3D; \frac{1}{4 \pi k_m} B^2 lS  $$</p>
+<p><strong>磁场能密度</strong><br>定义：单位体积内的磁场能。<br>磁场能密度与磁感应强度的平方成正比：<br>$$ w_m &#x3D; \frac{E_b}{V} &#x3D; \frac{E_b}{lS} &#x3D; \frac{ 1 }{4 \pi k_m } B^2 &#x3D; \frac{1}{2} \mu H^2 $$</p>
+<h2 id="交流电"><a href="#交流电" class="headerlink" title="交流电"></a>交流电</h2><h3 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h3><ul>
+<li>电动势，电流与电压：<br>$$ e&#x3D; ℰ_m \sin ( \omega t + \phi_0 ) $$<br>$$ i&#x3D; I_m \sin ( \omega t + \phi_0 ) $$<br>$$ u&#x3D; U_m \sin ( \omega t + \phi_0 ) $$</li>
+<li>从微观看，当导体中有正弦交流电时，导体内部自由电子的有规则定向移动就是简谐振动。</li>
+</ul>
+<p><strong>相位</strong></p>
+<ul>
+<li>初相大的交流电比初相小的交流电超前。</li>
+<li>同相交流电：频率相同，初相位相同，电流同时为零，同时达到正负最大值的交流电。</li>
+<li>反相交流电：频率相同，初相位相差 $\pi$ ，电流同时为零，当一个达到正向最大值时另一个达到反向最大值的交流电。</li>
+</ul>
+<p><strong>有效值</strong><br>让交流电和直流电通过相同阻值的电阻，如果它们在足够长的相同时间内产生的热量相等，就把这一直流电的数值叫做交变电流的有效值。<br>  对于正弦交流电，有：<br>  $$ I_{eff} &#x3D; \frac{I_m}{ \sqrt{2} } \approx 0.707 I_m $$<br>  $$ U_{eff} &#x3D; \frac{U_m}{ \sqrt{2} } \approx 0.707 U_m $$</p>
+<blockquote>
+<p>交流电中没有特别说明的物理量均指有效值。</p>
+</blockquote>
+<p><strong>功率因数</strong><br>由于电路中电感器和电容器的作用，电流和电压会产生相位差：<br>$$ i&#x3D;I_m \sin \omega t $$<br>$$ u&#x3D;U_m \sin (\omega t + \phi) $$<br>则功率为：<br>$$ p&#x3D;ui&#x3D; U_m I_m \sin ( \omega t+ \phi) \sin( \omega t)  &#x3D; \frac{1}{2} U_m I_m \cos \phi - \frac{1}{2} U_m I_m \cos (2 \omega t + \phi) $$<br>交流电在一个周期内 $ - \frac{1}{2} U_m I_m \cos (2 \omega t + \phi) $ 的平均值为零，则交流电的平均功率为：<br>$$ P_{平均} &#x3D; \frac{1}{2} U_m I_m \cos \phi $$<br>改用电流的有效值表示：<br>$$ P_{平均} &#x3D;  U I \cos \phi $$<br>式中 $ \cos \phi &#x3D; \frac{P_{平均} }{U I} $ 叫做功率因数。$ P_{平均} $ 是电路中实际消耗的功率，叫有功功率；$ U I $ 是电路中理论消耗的功率，叫表观功率。功率因数可以理解为电路的效率：<br>$$ \cos \phi &#x3D; \eta’ &#x3D; \frac{P_{实际} }{P_{理论} } \times 100 \% &#x3D; \frac{P_{平均} }{U I} \times 100\% $$<br>我国供电部门规定，用户电路的功率因数不得小于 $0.85$。</p>
+<h3 id="产生"><a href="#产生" class="headerlink" title="产生"></a>产生</h3><p>空间中有一足够大的三维匀强磁场 $B$ 。取某点为原点，以垂直于磁力线方向为 $x$ 轴，平行于磁力线方向为 $y$ 轴建立平面直角坐标系。将一金属框的一边垂直于坐标系放在原点，对边与 $x$ 轴的夹角为 $\phi$ 。以放在原点的边为轴旋转，角速度为 $\omega$ 。则对于时刻 $t$ ，线圈内感应电动势为：<br>$$ e&#x3D; ℰ_m \sin ( \omega t + \phi ) $$<br>$$ ℰ_m &#x3D; S(\vec{\omega} \times \vec{B} ) $$<br>线圈内电流为：<br>$$ i&#x3D; \frac{ℰ_m}{R} \sin ( \omega t + \phi_0 ) &#x3D; I_m \sin ( \omega t + \phi ) $$<br>产生的是交流电。</p>
+<h3 id="电能的运输"><a href="#电能的运输" class="headerlink" title="电能的运输"></a>电能的运输</h3><h4 id="变压器"><a href="#变压器" class="headerlink" title="变压器"></a>变压器</h4><p><strong>理想变压器</strong></p>
+<ul>
+<li>电压成比例：<br>$$ \frac{e_1}{e_2} &#x3D; \frac{U_1}{U_2} &#x3D; \frac{n_1}{n_2} $$</li>
+<li>输入输出功率相等：<br>$$ I_1 U_1 \cos \phi_1 &#x3D; I_2 U_2 \cos \phi_2 $$</li>
+</ul>
+<p><strong>真实变压器</strong></p>
+<ul>
+<li>损耗：<ul>
+<li>铁芯外部产生磁场和中心产生涡流的能量损耗。</li>
+<li>内部铜线电阻上的热损耗。</li>
+<li>铁芯中产生涡流的热损耗。</li>
+<li>$\phi_1$ 和 $\phi_2$ 差距的损耗。</li>
+<li>电流的集肤效应和邻近效应的损耗。</li>
+</ul>
+</li>
+<li>效率：<br>$$ \eta &#x3D; \frac{I_2 U_2}{I_1 U_1} $$</li>
+</ul>
+<p><strong>电能的运输</strong></p>
+<ul>
+<li>交流电：<ul>
+<li>优点：<ul>
+<li>增大电压，减少输电线的热损耗。</li>
+<li>可以使用变压器升降电压。</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>输电导线的电感。</li>
+<li>输电导线的电容。</li>
+<li>必须多台发电机同步运行，即使发电机之间的相位差为零。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>直流电：与上述相反。</li>
+<li>解决办法：交流电产生以后，先经过变压器升压，再用换流设备将交流电变成直流电，送到输电电路中去；用电时，先将直流电换成交流电，再用变压器降压，送往用户。</li>
+</ul>
+<h4 id="整流与滤波"><a href="#整流与滤波" class="headerlink" title="整流与滤波"></a>整流与滤波</h4><p><strong>晶体二极管</strong><br>把 p 型半导体和 n 型半导体连接起来，组成晶体二极管。由于电性相反的空穴和电子的扩散作用，p 型半导体与 n 型半导体连接处会产生 pn 结。pn 结中电场方向从 n 区指向 p 区。当加上反向电压、削弱了 pn 结中的电压时，电流能从 p 区流向 n 区；反之，晶体二极管中没有电流。 所以，pn 结具有单导电性，只允许电流从 p 区流向 n 区。<br>当加上的反向电压很大时，pn 结被破坏，二极管会突然产生大电流而被烧毁。刚好烧毁时的电压叫击穿电压。<br>理想二极管：导通时电阻为零，不导通时电阻为无穷大。</p>
+<p><strong>整流</strong></p>
+<ul>
+<li>把双向流动的交流电变为单向流动的直流电。</li>
+<li>半波整流：只有半个周期内有电流。<br>电路：晶体二极管与电阻串联。</li>
+<li>全波整流：整个周期内都有电流。<br>电路：两个异向晶体二极管并联后与电阻串联。</li>
+</ul>
+<p><strong>滤波</strong></p>
+<ul>
+<li>把脉动直流电变成比较平稳的直流电。</li>
+<li>方法：在半波整流电路中并联一个电容器；在全波整流电路中串联一个电感器；两个电容器和一个电感器结合成 $\pi$ 型滤波器。</li>
+</ul>
+<h3 id="交流电路"><a href="#交流电路" class="headerlink" title="交流电路"></a>交流电路</h3><p><strong>纯电阻电路</strong><br>只有电阻的交流电路。<br>在频率不是很大 $ (\nu &lt; 10^7 Hz) $ 的情况下，电路中的瞬时电流和瞬时电压服从欧姆定律：<br>$$ i &#x3D;\frac{u}{R} $$<br>$$ I &#x3D; \frac{U}{R} $$<br>对于纯电阻电路，$\phi&#x3D;0,\cos \phi &#x3D;1$：<br>$$ P_{平均} &#x3D; UI \cos \phi &#x3D; \frac{1}{2} U_m I_m &#x3D; \frac{1}{2} {I_m}^2 R &#x3D; \frac{1}{2} \frac{ {U_m}^2 }{R} $$</p>
+<p><strong>纯电容电路</strong><br>如果交流电路中只有电容器，连接电路的导线电阻都可以忽略不计，这样的电路就叫做纯电容电路。<br>纯电容电路两端的交流电压与纯电容电路中的交流电流的比值称为该电容电路的容抗：<br>$$ X_C &#x3D; \frac{U}{I} &#x3D; \frac{1}{\omega C} &#x3D; \frac{1}{2 \pi \nu C} (\Omega)$$<br>电容器使电流的相位超前于电压的相位。对于纯电容电路，$\phi&#x3D;- \pi&#x2F;2,\cos \phi &#x3D;0$：<br>$$ P_{平均} &#x3D; UI \cos \phi &#x3D;0 $$<br>电容器“通交流，隔直流”“通高频，阻低频”。</p>
+<p><strong>纯电感电路</strong><br>如果交流电路中只有电容器，绕制线圈的导线电阻可以忽略不计，这样的电路就叫做纯电感电路。<br>纯电感电路两端的交流电压与纯电感电路中的交流电流的比值称为该电感电路的感抗：<br>$$ X_L &#x3D; \frac{U}{I} &#x3D; \omega L &#x3D; 2 \pi \nu L (\Omega)$$<br>电感器使电流的相位落后于电压的相位。对于纯电感电路，$\phi&#x3D; \pi&#x2F;2,\cos \phi &#x3D;0$：<br>$$ P_{平均} &#x3D; UI \cos \phi &#x3D;0 $$<br>电感器“通直流，阻交流”“通低频，阻高频”。</p>
+<p><strong>实际电路</strong><br>实际电路中可以把电容器看成电阻和电容的串联，电感器看成电阻和电感的串联。<br>把交流电路中电阻，电容，电感在联接后形成的总阻碍作用叫做阻抗。<br>阻抗通常用复数表示，实部为电阻，虚部为电抗。<br>对于一个 $R、C、L$ 串联电路的阻抗为：<br>$$ Z &#x3D;\sqrt{(\omega L - \frac{1}{\omega C})^2 + R^2} $$<br>对于一个 $R、C、L$ 并联电路的阻抗为：<br>$$ Z &#x3D; \frac{1}{\sqrt{(\frac{1}{R})^2 + (\omega C -\frac{1}{\omega L})^2}} $$</p>
+<h3 id="三相交流电"><a href="#三相交流电" class="headerlink" title="三相交流电"></a>三相交流电</h3><p><strong>基本特征</strong><br>$$ e_A &#x3D; ℰ_m \sin \omega t $$<br>$$ e_B &#x3D; ℰ_m \sin (\omega t - \frac{2 \pi}{3} ) $$<br>$$ e_C &#x3D; ℰ_m \sin (\omega t - \frac{4 \pi}{3} ) &#x3D; \sin (\omega t + \frac{2\pi}{3} ) $$</p>
+<p><strong>电源的连接</strong></p>
+<ul>
+<li>三相四线制。</li>
+<li>相电压与线电压：<br>$$ U_{相} &#x3D; U_{AO} &#x3D; U_{BO} &#x3D; U_{CO} $$<br>$$ U_{线} &#x3D; U_{AB} &#x3D; U_{BC} &#x3D; U_{CA} $$<br>$$ U_{线} &#x3D; \sqrt{3} U_{相} $$<br>当 $ U_{相} &#x3D; 220 V $ （民用电压）时，$ U_{线} &#x3D; 380 V $（工业电压）。</li>
+</ul>
+<p><strong>负载的连接</strong></p>
+<ul>
+<li>星形连接：<ul>
+<li>有中性点，同时存在相电压和线电压。</li>
+<li>$$ I_{相} &#x3D; I_{线} $$<br>$$ U_{线} &#x3D; \sqrt{3} U_{相} $$<br>$$ (I_{中}&#x3D;0)_{三相负载完全相同} $$</li>
+</ul>
+</li>
+<li>三角形连接：<ul>
+<li>无中性点，只存在线电压。</li>
+<li>$$ U_{相} &#x3D; U_{线} $$<br>$$ (I_{线}&#x3D; \sqrt{3} I_{相} )_{三相负载完全相同} $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>三相感应电动机</strong></p>
+<ul>
+<li>分矢量：<br>$$ B_x &#x3D; B_m \sin \omega t $$<br>$$ B_y &#x3D; B_m \sin (\omega t - \frac{2 \pi}{3} ) $$<br>$$ B_z &#x3D; B_m \sin (\omega t - \frac{4 \pi}{3} ) $$</li>
+<li>合矢量：磁感应强度大小为 $\frac{3B_m}{2} $ ，并且以角速度 $\omega$ 匀速旋转的矢量。</li>
+</ul>
+<h2 id="电磁振荡和电磁波"><a href="#电磁振荡和电磁波" class="headerlink" title="电磁振荡和电磁波"></a>电磁振荡和电磁波</h2><h3 id="LC回路"><a href="#LC回路" class="headerlink" title="LC回路"></a>LC回路</h3><p>将一个自感系数很大的电感器和一个大电容器串联，给电容器充电后，观察到回路中的电流是大小和方向都做周期性变化的交变电流，这样的电流叫振荡电流，能产生振荡电流的电路叫振荡电路。LC回路是最简单的振荡电路。</p>
+<p><strong>电磁振荡与简谐振动的比较</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">力学量</th>
+<th align="center">位移 $x$</th>
+<th align="center">劲度系数 $k$</th>
+<th align="center">速度 $v$</th>
+<th align="center">质量 $m$</th>
+<th align="center">阻力系数 $\gamma$</th>
+<th align="center">弹性势能 $ \frac{1}{2}kx^2$</th>
+<th align="center">动能 $ \frac{1}{2}mv^2$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">电学量</td>
+<td align="center">电量 $q$</td>
+<td align="center">电容倒数 $\frac{1}{C}$</td>
+<td align="center">电流 $I$</td>
+<td align="center">电感 $L$</td>
+<td align="center">电阻 $R$</td>
+<td align="center">电场能 $\frac{1}{2} \frac{q^2}{C} $</td>
+<td align="center">磁场能 $\frac{1}{2} LI^2 $</td>
+</tr>
+</tbody></table>
+<p><strong>固有周期和固有频率</strong><br>振荡电路中发生无阻尼振荡的周期和频率，叫做该振荡电路的固有周期和固有频率。<br>$$ T_{固有} &#x3D; 2 \pi \sqrt{LC} $$<br>$$ {\nu}_{固有} &#x3D; \frac{1}{2 \pi \sqrt{LC} } $$</p>
+<h3 id="电磁场"><a href="#电磁场" class="headerlink" title="电磁场"></a>电磁场</h3><p><strong>麦克斯韦电磁场理论</strong></p>
+<ul>
+<li>变化的磁场能够在周围的空间产生电场。<ul>
+<li>变化的磁场产生电场的规律为左手螺旋关系：大拇指指向磁场增强的方向，四指方向为电场方向。</li>
+<li>如果磁场的变化是均匀的，则产生的电场是稳定的。交变磁场产生的涡旋电场也是交变的。</li>
+</ul>
+</li>
+<li>变化的电场能够在周围的空间产生磁场。<ul>
+<li>变化的电场产生磁场的规律为右手螺旋关系：大拇指指向电场增强的方向，四指方向为磁场方向。</li>
+<li>如果电场的变化是均匀的，则产生的磁场是稳定的。交变电场产生的磁场也是交变的。</li>
+</ul>
+</li>
+<li><strong>变化的电场</strong>和磁场是不能分离的统一场，统称电磁场。<blockquote>
+<p>因为电场是<strong>变化的</strong>，所以一定要明确参考系。</p>
+</blockquote>
+</li>
+<li>电磁场是不依赖于人们感觉的客观存在，是物质的一种特殊形态。</li>
+</ul>
+<p><strong>麦克斯韦电磁方程组</strong></p>
+<ul>
+<li>微分式：<br>$$ ▽ \cdot E &#x3D; \frac{ { \rho}_0 }{ { \epsilon}_0 } $$<br>$$ ▽ \times E &#x3D; \frac{ \partial B }{ \partial t } $$<br>$$ ▽ \cdot B &#x3D; 0 $$<br>$$ ▽ \times B &#x3D; { \epsilon}_0 { \mu}_0 \frac{ \partial E }{ \partial t } + { \mu }_0 j $$</li>
+<li>积分式：<br>$$ \oint E \cdot dS &#x3D; \frac{q}{ {\epsilon}_0} $$<br>$$ \oint E \cdot dl &#x3D; - \int \int \frac{ \partial B}{ \partial t} \cdot dS $$<br>$$ \oint B \cdot dS &#x3D; 0 $$<br>$$ \oint B \cdot dl &#x3D; \mu_0 I + \epsilon_0 \mu_0 \int \int \frac{ \partial E}{ \partial t} \cdot dS $$</li>
+</ul>
+<h3 id="电磁波"><a href="#电磁波" class="headerlink" title="电磁波"></a>电磁波</h3><p>变化的电场和磁场由近及远地传播开，形成电磁波。</p>
+<h4 id="电磁波的性质"><a href="#电磁波的性质" class="headerlink" title="电磁波的性质"></a>电磁波的性质</h4><p><strong>电磁波的表达式</strong><br>$$ E &#x3D; E_\theta &#x3D; \frac{\omega^2 p_0 \sin \theta}{4 \pi \epsilon_0 c^2 r} \cos \omega[(t-\frac{r}{u})+\phi_0]  $$<br>$$ &#x3D; E_0 \cos \omega(t-\frac{x}{c})&#x3D; E_0 \cos[2\pi(\frac{t}{T} - \frac{x}{\lambda})+\phi_0] $$<br>$$ H &#x3D; H_\phi &#x3D; \frac{\omega^2 p_0 \sin \theta}{4\pi cr} \cos \omega[(t-\frac{r}{u})+\phi_0] $$<br>$$&#x3D; H_0 \cos \omega(t-\frac{x}{c}) &#x3D; H_0 \cos[2\pi(\frac{t}{T} - \frac{x}{\lambda})+\phi_0] $$</p>
+<p><strong>电磁波的波动方程</strong><br>$$ \frac{\partial^2 E}{\partial t^2} &#x3D; \frac{1}{\epsilon \mu} \frac{\partial^2 E}{\partial x^2} $$<br>$$ \frac{\partial^2 H}{\partial t^2} &#x3D; \frac{1}{\epsilon \mu} \frac{\partial^2 H}{\partial x^2} $$</p>
+<p><strong>电磁波的性质</strong></p>
+<ul>
+<li>空间中任意一点的电场强度 $\vec{E}$ 的方向总是垂直于磁场强度 $\vec{H}$ 的方向。电磁波是横波，具有偏振性。</li>
+<li>空间中任意一点的电场强度 $\vec{E}$ 和磁场强度 $\vec{H}$ 都随时间成比例做周期性变化：<br>$$ \sqrt{\epsilon} E &#x3D; \sqrt{\mu} H $$</li>
+<li>在离振源较远的地方，各点的电场强度 $\vec{E}$ 与磁场强度 $\vec{H}$ 同相。</li>
+<li>电磁波在真空中的传播速率：<br>$$ u &#x3D; \sqrt{\frac{2k}{k_m} } &#x3D; \frac{1}{\sqrt{\epsilon_0 \mu_0} } &#x3D; c \approx 3 \times 10^8 (m \cdot s^{-1}) $$</li>
+</ul>
+<p><strong>电磁波的能量</strong><br>电场和磁场的能量体密度：<br>$$ w_e &#x3D; \frac{1}{2} \epsilon E^2 $$<br>$$ w_m &#x3D; \frac{1}{2} \mu H^2 $$<br>电磁波的能量密度：<br>$$ w &#x3D; w_e + w_m &#x3D; \frac{1}{2} (\epsilon E^2+\mu H^2) $$<br>电磁波的能流密度：<br>$$ S &#x3D; wu &#x3D; \frac{1}{2\sqrt{\epsilon \mu}}(\epsilon E^2+\mu H^2) &#x3D; \frac{1}{2\sqrt{\epsilon \mu}}(\sqrt{\epsilon} E \sqrt{\mu} H+\sqrt{\mu} H \sqrt{\epsilon} E) &#x3D;EH $$<br>$$ \vec{S} &#x3D; \vec{E} \times \vec{H} $$<br>电磁波的平均能流密度：<br>$$ \overline{S} &#x3D; \frac{1}{2} E_0 H_0 &#x3D; \frac{1}{2} \epsilon_0 c E_0^2 &#x3D; \frac{1}{2} \mu_0 c H_0^2 &#x3D; \frac{\mu_0 p_0^2 \omega^4 \sin^2 \theta}{32 \pi^2 r^2 c} $$</p>
+<h4 id="电磁波的发送与接收"><a href="#电磁波的发送与接收" class="headerlink" title="电磁波的发送与接收"></a>电磁波的发送与接收</h4><p><strong>发送</strong></p>
+<ul>
+<li>开放的LC回路或振荡偶极子都能产生电磁波。只有<strong>加速运动的电荷</strong>才能辐射电磁波。</li>
+<li>振荡器的作用：产生高频振荡电流，对开放电路提供能量。</li>
+<li>调制：使高频电流带上低频信号的过程。<ul>
+<li>调幅：使原为等幅的高频电磁波的振幅按信号的规律变化。</li>
+<li>调频：使高频等幅电磁波的频率按信号的规律变化。</li>
+</ul>
+</li>
+<li>无线电波的波段，传播方式和主要用途。</li>
+</ul>
+<p><strong>接收</strong></p>
+<ul>
+<li>本质是受迫振荡。</li>
+<li>电谐振：当电磁波的频率和振荡电路自己的固有频率相同时，振荡电流的振幅最大。</li>
+<li>调谐：调节接收电路中的电学量使此电路与电磁波产生电谐振的过程。</li>
+<li>解调：晶体二极管去除高频调幅电流的一半，线圈除去高频电流。</li>
+</ul>
+<h1 id="光学"><a href="#光学" class="headerlink" title="光学"></a>光学</h1><h2 id="几何光学"><a href="#几何光学" class="headerlink" title="几何光学"></a>几何光学</h2><p><strong>光的传播规律</strong></p>
+<ul>
+<li>光在同种均匀介质中沿直线传播。</li>
+<li>光在真空中速率最大，约为 $ 3 \times 10^8 &#x2F;s $。</li>
+<li>光在传播过程中与其他光束相遇时，各光束都各自独立传播，不改变其性质和传播方向。</li>
+<li>当光线方向返转时，光将循同一路径逆向传播。</li>
+<li>费马原理：光从空间的一点到另一点是沿着光程为最短的路径传播：<br>$$ \int_{B}^{A} n dl &#x3D; 极值 $$<br>光程 $OPL &#x3D; nl$。<br>$ n $ : 光的折射率。<br>在平面反射和折射中分别是数学的将军饮马和胡不归模型。</li>
+</ul>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p><strong>平面反射</strong></p>
+<ul>
+<li>三线共面。</li>
+<li>入射角等于反射角：$ i &#x3D; i’ $</li>
+</ul>
+<p><strong>球面反射</strong></p>
+<ul>
+<li>傍轴光线条件下球面反射的物像公式。<br>$$ \frac{1}{p} + \frac{1}{p’} &#x3D; \frac{1}{f} &#x3D; \frac{2}{r} $$</li>
+<li>反射球面的横向放大率：<br>$$ m &#x3D; - \frac{p’}{p} $$</li>
+<li>平面折射是球面折射中 $ r \to \infty $ 的特殊情况。</li>
+<li>$ m $ : 与物体方向相同为正，方向相反为负；$ |m| &gt; 1 $ 像是放大，$ |m| &lt; 1 $ 像是缩小。</li>
+</ul>
+<p><strong>球面和透镜成像公式的正负号规定</strong></p>
+<ol>
+<li>以反（折）射面为界，将空间分为两个区：</li>
+</ol>
+<ul>
+<li>$ A $ 区：光线发出的区。</li>
+<li>$ B $ 区：光线<strong>通过</strong>的区。</li>
+</ul>
+<ol start="2">
+<li>由 $ A $ 区决定的量：</li>
+</ol>
+<ul>
+<li>物距 $ p $ : 物体在 $ A $ 区为正（实物），在 $ A $ 区的<strong>对面</strong>为负（虚物）。</li>
+</ul>
+<ol start="3">
+<li>由 $ B $ 区决定的量：</li>
+</ol>
+<ul>
+<li>像距 $ p’ $ : 像在 $ B $ 区为正（实像），在 $ B $ 区的<strong>对面</strong>为负（虚像）。</li>
+<li>曲率半径 $ r $ : 曲率中心在 $ B $ 区为正，在 $ B $ 区的<strong>对面</strong>为负。</li>
+<li>焦距 $ f $ : 焦点在 $ B $ 区为正，在 $ B $ 区的<strong>对面</strong>为负。</li>
+</ul>
+<h3 id="折射"><a href="#折射" class="headerlink" title="折射"></a>折射</h3><p><strong>平面折射</strong></p>
+<ul>
+<li>光束从折射率大的介质射到折射率小的介质时，同时发生折射和反射。</li>
+<li>平面反射的入射角和出射角关系：<br>$$ n_1 \sin i_1 &#x3D; n_2 \sin i_2 $$</li>
+<li>临界角：<br>$$ n_1 \sin i_c &#x3D; n_2 $$</li>
+</ul>
+<p><strong>球面折射</strong></p>
+<ul>
+<li>傍轴光线条件下球面折射的物像公式：<br>$$ \frac{n_1}{p} + \frac{n_2}{p’} &#x3D; \frac{n_2 - n_1 }{r} $$</li>
+<li>折射球面的横向放大率：<br>$$ m &#x3D; \frac{n_1 p’}{n_2 p} $$</li>
+<li>共轴球面系统成像横向放大率：<br>$$ m &#x3D; \Pi m_i $$</li>
+<li>平面折射是球面折射中 $ r \to \infty $ 的特殊情况。</li>
+<li>$ n,p,m $ 的正负值与球面反射相同。</li>
+</ul>
+<p><strong>薄透镜</strong></p>
+<ul>
+<li>磨镜者公式：<br>$$ f &#x3D; f’ &#x3D; \frac{1}{ (n-1) ( \frac{1}{r_1}- \frac{1}{r_2} ) } $$</li>
+<li>傍轴光线条件下的薄透镜在空气中的物像公式：<br>$$ \frac{1}{p} + \frac{1}{p’} &#x3D; \frac{1}{f} $$</li>
+<li>薄透镜的放大率：<br>$$ m &#x3D; \frac{p’}{p} $$<br>物距 $ p $ : 实物取正，虚物取负。<br>像距 $ p’ $ : 实像取正，虚像取负。<br>焦距和曲率半径 $ f ，r_1, r_2 $ : 凹透镜取负，凸透镜取正。<br>$ m $ : 与物体方向相同为正，方向相反为负；$ |m| &gt; 1 $ 像是放大，$ |m| &lt; 1 $ 像是缩小。</li>
+</ul>
+<h3 id="常见光学仪器"><a href="#常见光学仪器" class="headerlink" title="常见光学仪器"></a>常见光学仪器</h3><p><strong>三棱镜</strong></p>
+<ul>
+<li>折射率：<br>$$ n&#x3D; \frac{ \sin ( \frac{ \alpha + {\delta}_min}{2} ) }{ \sin \frac{ \alpha }{2} } $$</li>
+<li>应用：光谱分析。</li>
+</ul>
+<p><strong>眼睛和眼镜</strong></p>
+<ul>
+<li>明视距离：$ 25cm $ ,看得清楚又不感到疲劳。</li>
+<li>近视眼：睫状肌完全松弛时，无穷远处的物体成像在视网膜之前。<br>矫正：佩戴凹透镜。</li>
+<li>远视眼：睫状肌完全松弛时，无穷远处的物体成像在视网膜之后。<br>矫正：佩戴凸透镜。</li>
+<li>视角：物体对眼睛所张的角度。<br>物体在视网膜上成像的大小正比于它的视角。</li>
+</ul>
+<p><strong>放大镜</strong></p>
+<ul>
+<li>凸透镜，成正立、放大的虚像。</li>
+<li>视角放大率：<br>$$ M &#x3D; \frac{ \theta }{ \theta _0 } &#x3D; \frac{ \frac{h}{l_0} }{ \frac{h}{f} }&#x3D; \frac{ l_0 }{f} &#x3D; \frac{ 25(cm) }{f} $$</li>
+</ul>
+<p><strong>显微镜</strong></p>
+<ul>
+<li>凸透镜，成倒立、放大的虚像。</li>
+<li>视角放大率：<br>$$ M &#x3D; M_1 M_2 &#x3D; \frac{L}{f_0} \frac{l_0}{f_E} &#x3D; \frac{l_0 L}{f_O f_E} $$</li>
+</ul>
+<p><strong>望远镜</strong></p>
+<ul>
+<li>凸透镜，成正立，放大的虚像。</li>
+<li>视角放大率：<br>$$ M &#x3D; \frac{ \theta ’ }{ \theta } &#x3D; \frac{f_O}{f_E} $$</li>
+</ul>
+<h2 id="波动光学"><a href="#波动光学" class="headerlink" title="波动光学"></a>波动光学</h2><p><strong>光波基本特征</strong></p>
+<ul>
+<li>光是一种电磁波，波速等于光速。</li>
+<li>光波遵循惠更斯原理。</li>
+</ul>
+<h3 id="光的干涉"><a href="#光的干涉" class="headerlink" title="光的干涉"></a>光的干涉</h3><p>定义：在空间某些点处，振动始终加强，在另一些点处振动始终减弱或完全抵消的现象。</p>
+<p><strong>相干光线</strong></p>
+<ul>
+<li>定义：振动频率相同、振动方向相同、相位差恒定的光源。</li>
+<li>获得方法：<ul>
+<li>分波阵面法：杨氏双缝干涉实验。</li>
+<li>分振幅法：薄膜干涉实验。</li>
+</ul>
+</li>
+</ul>
+<p><strong>杨氏双缝干涉</strong></p>
+<ul>
+<li>干涉明暗条纹的位置：<ul>
+<li>各级明纹中心离 $ O $ 点的距离为：<br>$$ |x| &#x3D; k \frac{l \lambda }{d} , k &#x3D; 0,1,2,··· $$<br>当 $ k&#x3D;0 $ 时的明纹称为中央明纹。</li>
+<li>各级暗纹中心离 $ O $ 点的距离为：<br>$$ |x| &#x3D; (2k+1) \frac{l \lambda }{2d} , k &#x3D; 0,1,2,··· $$</li>
+<li>干涉条纹等距分布，两相邻明纹或暗纹的间距为：<br>$$ \Delta x &#x3D; \frac{l \lambda }{d} $$</li>
+</ul>
+</li>
+<li>干涉条纹的强度分布：<ul>
+<li>两光波相干叠加后的强度为：<br>$$ I  &#x3D; 4 I_0 \cos ^2 \frac{ \Delta \Phi }{2} $$<br>$I_0$ 为每个波分别照射时的光强。</li>
+<li>明纹中心，即两光波相位差为 $ \Delta \Phi  &#x3D; 2k \pi $ ，波程差为 $ |\delta| &#x3D; k \lambda $ 处，光强为 $ I &#x3D; 4 I_0 $ 。</li>
+<li>暗纹中心，即两光波相位差为 $ \Delta \Phi  &#x3D; (2k+1) \pi $ ，波程差为 $ |\delta| &#x3D; (k+\frac{1}{2} ) \lambda $ 处，光强为 $ 0 $ 。</li>
+</ul>
+</li>
+</ul>
+<p><strong>薄膜干涉</strong></p>
+<ul>
+<li>等倾干涉明暗条纹的位置：<ul>
+<li>产生明纹的条件：<br>$$ \delta &#x3D; 2d \sqrt{n^2 - n_1^2 \sin^2 i}+\frac{\lambda}{2} &#x3D; k\lambda $$<br>$$ \Delta \phi &#x3D; \phi_{02}-\phi_{01}-2 \pi \frac{r_2-r_1}{\lambda} &#x3D; 2 k \pi $$</li>
+<li>产生暗纹的条件：<br>$$ \delta &#x3D; 2d \sqrt{n^2 - n_1^2 \sin^2 i}+\frac{\lambda}{2} &#x3D; (2k+1)\frac{\lambda}{2} $$<br>$$ \Delta \phi &#x3D; \phi_{02}-\phi_{01}-2 \pi \frac{r_2-r_1}{\lambda} &#x3D; (2k+1) \pi  $$</li>
+</ul>
+</li>
+</ul>
+<h3 id="光的衍射"><a href="#光的衍射" class="headerlink" title="光的衍射"></a>光的衍射</h3><p>定义：当光波在传播过程中遇到障碍物时，其传播方向绕过障碍物而发生偏折的现象。</p>
+<p><strong>单缝衍射</strong><br>衍射图样：中心一个宽度比线光源的像宽很多的亮纹和两侧许多明暗相同、亮度逐渐减小的平直条纹。</p>
+<ul>
+<li>衍射明暗条纹的位置：<ul>
+<li>各级明纹中心的衍射角 $\theta$ 为：<br>$$\sin \theta &#x3D; \underline{+} k\frac{\lambda}{a} $$</li>
+<li>各级明纹中心的衍射角 $\theta$ 为：<br>$$\sin \theta &#x3D; \underline{+} (k+\frac{1}{2}) \frac{\lambda}{a}$$</li>
+<li>中央亮纹中心：<br>$$ \theta &#x3D;0 $$</li>
+</ul>
+</li>
+<li>衍射条纹的强度分布：<br>$$ I &#x3D; I_0 (\frac{\sin u}{u})^2 $$<br>$$ u &#x3D; \frac{\pi a \sin \theta}{\lambda} $$</li>
+</ul>
+<p><strong>衍射光栅</strong></p>
+<ul>
+<li>原理：单缝衍射测量精确度太低、不易分辨。增加狭缝的个数能使衍射条纹的宽度变窄、量度增加。</li>
+<li>光栅方程：<br>$$ d \sin \theta  &#x3D; \underline{+} k \lambda $$<br>光栅常数 $d &#x3D; a+b $ 是每一条狭缝宽度 $a$ 和不透光部分宽度 $b$ 之和。</li>
+<li>衍射光栅的光强：合光强是来自一条缝的光强的 $N^2$ 倍。<br>$$ I &#x3D; N^2 I_0 $$</li>
+</ul>
+<h3 id="光的偏振"><a href="#光的偏振" class="headerlink" title="光的偏振"></a>光的偏振</h3><ul>
+<li>光波是横波，只有横波才有偏振现象。</li>
+<li>偏振光：振动方向在震动面内不具有对称性的光。<ul>
+<li>线偏振光：光矢量始终沿某一方向振动。</li>
+<li>部分偏振光：部分移去自然光两个垂直分量的一个分量所得到的光。</li>
+<li>（椭）圆偏振光：迎着光的传播方向观察，光矢量端点轨迹是一个（椭）圆的光。</li>
+</ul>
+</li>
+<li>自然光：光矢量的振动在各个方向上的分布是对称的光。</li>
+</ul>
+<p><strong>起偏和检偏</strong></p>
+<ul>
+<li>起偏：从自然光中获得偏振光的过程。</li>
+<li>检偏：检验入射光是否为偏振光。</li>
+</ul>
+<p><strong>马吕斯定律</strong><br>如果入射线偏振光的光强为 $ I_1 $ ，投射光的光强 $ I_2 $ 为（忽略检偏器对透射光的吸收）：<br>$$ I_2 &#x3D; I_1 \cos ^2 \alpha $$<br>$ \alpha $ 为检偏器偏振化方向和入射线偏振光的光矢量振动方向之间的夹角。</p>
+<h3 id="光的散射"><a href="#光的散射" class="headerlink" title="光的散射"></a>光的散射</h3><p>定义：由于介质的不均匀性而产生的光偏离原来传播方向的现象。</p>
+<p><strong>瑞利定律</strong><br>当散射体的尺寸比光波波长小很多时，散射光强度与波长的四次方成反比：<br>$$ I &#x3D; I_0 \frac{8 \pi^4 \alpha^2(1+\cos^2 \theta)}{r^2} \frac{1}{\lambda^4} $$</p>
+<h3 id="光谱"><a href="#光谱" class="headerlink" title="光谱"></a>光谱</h3><p>定义：每种物质或原子所发出的具有特定的波长成分和强度分布的光波。</p>
+<p><strong>发射光谱</strong><br>定义：物体自身发光时所发出的光的光谱。</p>
+<ul>
+<li>连续光谱：连续分布包含各色光的光谱。</li>
+<li>明显光谱：只含一些不连续亮线的光谱。</li>
+<li>特征谱线：每种原子独有的明线光谱。</li>
+</ul>
+<p><strong>吸收光谱</strong><br>定义：某种波长的光被物质吸收后产生的光谱、<br>吸收光谱中的暗线，也是原子的特征谱线。</p>
+<p><strong>光谱分析</strong><br>定义：根据光谱来鉴别物质和确定它的化学成分。<br>应用：</p>
+<ul>
+<li>发现新元素。</li>
+<li>研究原子内部结构。</li>
+</ul>
+<h1 id="近代物理"><a href="#近代物理" class="headerlink" title="近代物理"></a>近代物理</h1><h2 id="相对论"><a href="#相对论" class="headerlink" title="相对论"></a>相对论</h2><h3 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h3><p><strong>实验基础</strong></p>
+<ul>
+<li>迈克尔逊-莫雷实验：以太系不存在，光在任何参考系内速度一定。</li>
+<li>精确实验测得以 $0.99975c$ 速度运动的 $\pi^0$ 介子发生衰变时向前、后辐射的光子速率均为 $c$。</li>
+</ul>
+<p><strong>基本原理</strong></p>
+<ul>
+<li>相对性原理：物理规律在一切惯性参考系中具有相同的表达式，所有惯性系对于描述物理现象是等价的。</li>
+<li>光速不变原理：在彼此相对作匀速直线运动的任一惯性系中，所测得的光在真空中的传播速度都是相等的。</li>
+</ul>
+<h3 id="相对论时空观"><a href="#相对论时空观" class="headerlink" title="相对论时空观"></a>相对论时空观</h3><p><strong>洛伦兹因子</strong><br>$$\gamma &#x3D; \sqrt{1-(\frac{u^2}{c^2})} \leq 1 $$<br>高能粒子的速度是以 $c$ 为极限的。<br>当 $ u&lt;&lt;c $ 时：<br>$$ \frac{1}{\gamma} \approx 1 + \frac{1}{2} \frac{u^2}{c^2} $$</p>
+<p><strong>钟慢效应</strong><br>$$ \frac{\Delta t_{S测S’}}{\Delta t_{S’测S’}} &#x3D; \gamma $$</p>
+<p><strong>尺缩效应</strong><br>$$ \frac{l_{S测S’}}{l_{S’测S’}} &#x3D; \gamma $$</p>
+<p><strong>钟慢效应和尺缩效应都是测量的偏差，而不是时间和长度本身的变化。不管待测物体以什么速度运动，在与其相对静止的参考系中测得的物理量都是一样的</strong>。</p>
+<p><strong>因果的绝对性</strong><br>虽然在相对论时空中，时空的量度是相对的，但是两个有因果关系的事件发生的顺序，在任何惯性系中观察，都不应该是颠倒的。</p>
+<h3 id="洛伦兹变换"><a href="#洛伦兹变换" class="headerlink" title="洛伦兹变换"></a>洛伦兹变换</h3><p><strong>时空坐标变换</strong></p>
+<ul>
+<li>$$ x’ &#x3D; \frac{x-ut}{\gamma}  $$<br>$$ y’ &#x3D; y $$<br>$$ z’ &#x3D; z $$<br>$$ t’ &#x3D; \frac{t-\frac{ux}{c^2}}{\gamma} $$</li>
+<li>$$ x &#x3D; \frac{x’+ut’}{\gamma} $$<br>$$ y &#x3D; y’ $$<br>$$ z &#x3D; z’ $$<br>$$ t &#x3D; \frac{t’ + \frac{ux’}{c^2}}{\gamma} $$</li>
+</ul>
+<p><strong>速度变换</strong><br>$$ v_x &#x3D; \frac{v_x’ + u}{1+\frac{u}{c^2} v_x’} $$<br>$$ v_x &#x3D; \frac{\gamma v_y’}{1+\frac{u}{c^2} v_x’} $$<br>$$ v_x &#x3D; \frac{\gamma v_z’}{1+\frac{u}{c^2} v_x’} $$</p>
+<h3 id="质速关系"><a href="#质速关系" class="headerlink" title="质速关系"></a>质速关系</h3><p>$$ m &#x3D; \frac{m_0}{\gamma} $$<br>$$ \frac{m_1}{m_2} &#x3D; \frac{\gamma_2}{\gamma_1} $$<br>$$ m^2c^2 - m^2v^2 &#x3D; m_0^2 c^2 $$</p>
+<h3 id="动量与能量"><a href="#动量与能量" class="headerlink" title="动量与能量"></a>动量与能量</h3><p><strong>相对论动量</strong><br>$$ p &#x3D;mv &#x3D; \frac{m_0 v}{\gamma} $$</p>
+<p><strong>相对论能量</strong><br>$$ \vec{F} \cdot d\vec{s} &#x3D; \frac{d\vec{p}}{dt} \cdot \vec{v}dt &#x3D; \vec{v}\cdot d(m\vec{v}) &#x3D; m\vec{v} \cdot d\vec{v} + v^2 dm &#x3D; c^2 dm $$<br>$$ E_k &#x3D; \int_{0}^{s} \vec{F} \cdot d\vec{s} &#x3D; \int_{m_0}^{m} c^2 dm &#x3D; mc^2 - m_0c^2 &#x3D; \frac{m_0 c^2}{\gamma} - m_0 c^2 $$</p>
+<ul>
+<li>当 $v&lt;&lt;c$ 时：<br>$$ E_k &#x3D; \frac{m_0 c^2}{\gamma} - m_0 c^2 \approx m_0 c^2(1+\frac{1}{2}\frac{v^2}{c^2})-m_0 c^2 &#x3D; \frac{1}{2} m_0 v^2 $$<br>$$ E &#x3D; E_k + E_0 &#x3D; mc^2 $$</li>
+<li>静能 $ E_0 &#x3D; m_0 c^2 $<br>$$ \Delta E &#x3D; \Delta m \cdot c^2 $$</li>
+</ul>
+<p><strong>相对论能量-动量关系</strong><br>$$ m^2 c^2 &#x3D; m_0 c^2 + m^2 v^2 $$<br>$$ \frac{E^2}{c^2} &#x3D; \frac{E_0^2}{c^2} + p^2 $$<br>$$ E^2 &#x3D; E_0^2 + c^2 p^2 $$</p>
+<h3 id="广义相对论基础"><a href="#广义相对论基础" class="headerlink" title="广义相对论基础"></a>广义相对论基础</h3><ul>
+<li>等效原理：在处于均匀的恒定引力场影响下的惯性系中，所发生的一切物理现象，可以和一个不受引力场影响、以恒定加速度运动的非惯性系内的物理现象完全相同。</li>
+<li>广义相对论的相对性原理：所有非惯性系和有引力场存在的惯性系对于描述物理现象都是等价的。</li>
+</ul>
+<h2 id="波动性和粒子性"><a href="#波动性和粒子性" class="headerlink" title="波动性和粒子性"></a>波动性和粒子性</h2><h3 id="黑体辐射实验"><a href="#黑体辐射实验" class="headerlink" title="黑体辐射实验"></a>黑体辐射实验</h3><ul>
+<li>黑体：能够完全吸收入射到它表面上的各种波长的电磁波。</li>
+<li>辐出度 $M(T)$ ：单位时间内从物体单位表面积上所发射出的各种波长的总辐射能。<br>单色辐出度 $M(\lambda,T)$ ：单位时间内从物体表面单位面积上辐射的在 $\lambda - \lambda+d\lambda $ 范围内单位波长间隔中的辐射能。<br>$$ M(\lambda,T) &#x3D;\frac{d M(T)}{d\lambda} $$</li>
+</ul>
+<p><strong>实验规律</strong></p>
+<ul>
+<li>斯特藩-玻尔兹曼定律：每条黑体辐射曲线下的面积等于黑体在一定温度下的总辐出度,总辐出度与其温度的四次方成正比：<br>$$ M_0(T) &#x3D; \int_{0}^{\infty} M_0(\lambda,T) d\lambda &#x3D; \sigma T^4 $$<br>斯特藩常量 $\sigma &#x3D; 5.670400(40) \times 10^{-8} (W \cdot m^{-2} \cdot K^{-4}) $。</li>
+<li>维恩位移定律：单色辐出度的峰值所对应的波长与温度成反比：<br>$$ T\lambda_m &#x3D; b $$<br>维恩常量 $b &#x3D; 2.8977685(51) \times 10^{-3} m \cdot K $。</li>
+</ul>
+<p><strong>普朗克公式</strong></p>
+<ul>
+<li>能量子假说：<ul>
+<li>黑体辐射的电磁波是由于大量带点粒子做简谐振动而发出的，这些振动粒子称为谐振子，它们不断地发射和吸收电磁波。</li>
+<li>谐振子具有的能量以及它们发射和吸收的能量的数值不是连续的，而是某个最小能量单元 $\epsilon &#x3D; h\nu$ 的整数倍，能量是量子化的。</li>
+</ul>
+</li>
+<li>普朗克公式：<br>$$ \frac{d M(T)}{d\lambda}&#x3D;M(\lambda,T) &#x3D; 2\pi hc^2\lambda_{-5} \frac{1}{e^{\frac{hc}{\lambda kT}}-1} $$<br>$$ M(\nu,T) &#x3D; \frac{2\pi h \nu^3}{c^2} \frac{1}{e^{\frac{hc}{\lambda kT}}-1} $$</li>
+</ul>
+<h3 id="光电效应"><a href="#光电效应" class="headerlink" title="光电效应"></a>光电效应</h3><p>定义：光照射到金属表面时，能使金属中电子从表面逸出的现象。</p>
+<p><strong>实验规律</strong></p>
+<ul>
+<li>入射光频率一定、强度一定时，电流 $I$ 随外加电压 $U$ 的增大而增大。当 $U$ 增大到某一数值时，电流 $I$ 不再增加，达到饱和值 $I_m$ 。</li>
+<li>当外加电压 $U&#x3D;0$ 时，电流 $I$ 不为零。只有加反向电压并达到截至电压 $U_c$ 时，电流 $I$ 才为零。</li>
+<li>当电压不变时，饱和电流与入射光强成正比。逸出的光电子的初速度与光强无关。</li>
+<li>光电子的初动能与入射光频率 $\nu$ 成线性关系。当入射光频率小于截止频率 $\nu_0$ 时，无论光强多大、照射时间多长，都不会产生光电效应。截止频率 $\nu_0$ 与被照射的金属材料有关。 </li>
+<li>从入射光开始照射指导金属释放出电子，无论光多微弱，几乎都是瞬时的，弛豫时间不超过 $10^{-9}$。</li>
+</ul>
+<p><strong>爱因斯坦光子理论</strong></p>
+<ul>
+<li>做简谐振动的振子不仅在吸收和放出能量时是按照最小能量单元的整数倍进行的，而且在电磁波的传播过程中，就是一个个这种最小能量单元传播。最小的能量单元叫光子，一束光就是一束以光速运动的光子流。</li>
+<li>频率为 $\nu$ 的光子能量为 $\epsilon &#x3D; h\nu$。</li>
+<li>光电效应的爱因斯坦方程：<br>$$ E_{km} &#x3D; \frac{1}{2} m_e v_m^2 &#x3D; h\nu - w_0 $$</li>
+</ul>
+<h3 id="物质波"><a href="#物质波" class="headerlink" title="物质波"></a>物质波</h3><p><strong>光的波粒二象性</strong><br>根据爱因斯坦的光子理论和相对论：<br>$$ \epsilon &#x3D; h\nu &#x3D; mc^2 $$<br>$$ m &#x3D; \frac{h \nu}{c^2} &#x3D; \frac{h}{\lambda c} $$<br>$$ p &#x3D; \frac{h}{\lambda} $$</p>
+<p><strong>德布罗意波</strong></p>
+<ul>
+<li>波动性和粒子性的关系：<br>$$ \nu &#x3D; \frac{E}{h} $$<br>$$ \lambda &#x3D; \frac{h}{p} $$</li>
+<li>自由微观粒子的波函数：<br>$$ \Psi &#x3D; \Psi_0 \cos 2\pi (\frac{p}{h}x - \frac{E}{h}t) $$</li>
+</ul>
+<p><strong>概率波</strong><br>单个粒子在空间中的位置是不确定的，但由一定的概率分布。在某处概率的大小由物质波在该处的强度即物质波波函数振幅的平方来决定。对于大量的粒子，这种概率分布将导致确定的宏观结果。</p>
+<h2 id="原子物理"><a href="#原子物理" class="headerlink" title="原子物理"></a>原子物理</h2><h3 id="原子结构"><a href="#原子结构" class="headerlink" title="原子结构"></a>原子结构</h3><h4 id="核式结构模型"><a href="#核式结构模型" class="headerlink" title="核式结构模型"></a>核式结构模型</h4><ul>
+<li>原子中所有正电荷及几乎全部质量都集中在原子中心很小体积的原子核内，电子则绕着它转动。</li>
+<li>相同时间内打在与散射粒子速度方向垂直的单位面积的荧光屏上的 $\alpha$ 粒子数为：<br>$$ \Delta N &#x3D; \frac{Nntk^2(Ze)^2 e^2}{4 E_k^2 r^2 \sin^4 \frac{\theta}{2}} $$</li>
+</ul>
+<h4 id="玻尔的氢原子理论"><a href="#玻尔的氢原子理论" class="headerlink" title="玻尔的氢原子理论"></a>玻尔的氢原子理论</h4><p><strong>广义巴尔末公式</strong><br>$$\frac{1}{\lambda} &#x3D; R(\frac{1}{m^2} -\frac{1}{n^2})(n&gt;m) $$</p>
+<ul>
+<li>里德伯常量 $R &#x3D; 1.096775(81) \times 10^7 m^{-1} $</li>
+</ul>
+<p><strong>波尔原子理论</strong><br>基本假设：</p>
+<ul>
+<li>原子只能处于一系列不连续的定态中。在定态中原子时稳定的，电子虽然做加速运动，但并不向外辐射能量。</li>
+<li>原子从能量为 $E_1$ 的定态跃迁到能量为 $E_2$ 的定态时，它辐射或吸收一定频率的光子。光子的能量为：<br>$$ h\nu &#x3D; |E_2 - E_1| $$</li>
+<li>原子的不同定态对应电子不同的运行轨道。只有电子的角动量满足<br>$$ L &#x3D; m_e v r &#x3D; n \frac{h}{2\pi}  $$<br>时，这些轨道才是可能的。即角动量的量子化。</li>
+</ul>
+<p><strong>电子云模型</strong><br>在服从概率规律的原子世界中，电子像环绕在原子核周围的“云彩”。电子能处在原子世界中的任何地方，只是它们出现在波尔所说的轨道上的概率要大得多。“电子云”稠密的地方，电子出现的概率大；反之则小。</p>
+<ul>
+<li>薛定谔方程：波函数 $\Psi(r,t)$ 的平方表征着电子在时刻 $t$ 附近的单位时间间隔内出现于 $r$ 处附近单位空间内的概率。</li>
+<li>海森伯方程：采用矩阵的数学工具，从光谱的频率和振幅入手得出的方程式。海森伯方程等价于薛定谔方程。</li>
+</ul>
+<h4 id="激光"><a href="#激光" class="headerlink" title="激光"></a>激光</h4><p>定义：由于受激辐射而得到加强的相干光。</p>
+<p><strong>辐射与吸收</strong></p>
+<ul>
+<li>自发辐射：在没有任何外界作用下，处于激发态的原子会自发地辐射光子返回基态或低能态。自发辐射的光不是相干光。辐射光子的频率为：<br>$$ \nu &#x3D; \frac{E_2-E_1}{h} $$</li>
+<li>受激辐射和吸收：能量为 $h\nu&#x3D;E_2-E_1$ 的光子射入时，既能使处于激发态 $E_2$ 的原子从高能态 $E_2$ 跃迁会低能态 $E_1$ ,同时辐射一个与外来光子的频率、相位、偏振状态和传播方向都相同的光子，成为相干光；也能使处于 $E_1$ 能级的原子受激吸收跃迁至 $E_2$ 能级。</li>
+</ul>
+<p><strong>粒子数反转</strong><br>要使受激辐射强于受激吸收，即实现粒子数反转，必须要满足：</p>
+<ul>
+<li>激活物质要具有合适的含有亚稳态的能级结构。</li>
+<li>要有合适的能量输入系统，能有效激活介质粒子，使之从基态跃迁到亚稳态。<blockquote>
+<p>亚稳态可以理解为稳定的激发态。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>性质</strong></p>
+<ul>
+<li>产生：光谐振腔。</li>
+<li>特性：<ul>
+<li>方向性很好：激光通信。</li>
+<li>是单色性很好的相干光束：激光全息。</li>
+</ul>
+</li>
+</ul>
+<h3 id="原子核"><a href="#原子核" class="headerlink" title="原子核"></a>原子核</h3><h4 id="放射性衰变"><a href="#放射性衰变" class="headerlink" title="放射性衰变"></a>放射性衰变</h4><p><strong>$\alpha$ 衰变</strong></p>
+<ul>
+<li>原理：原子核自发放出 $\alpha$ 粒子。</li>
+<li>规律：<br>$$ _{Z}^{A} X \to _{Z-2}^{A-4} Y + _2^4 He $$</li>
+</ul>
+<p><strong>$\beta$ 衰变</strong></p>
+<ul>
+<li>原理：<ul>
+<li>$\beta^-$ 衰变：<br>$$_0^1 n \to _1^1 p + _{-1}^0 e + \overline{\nu} $$</li>
+<li>$\beta^+$ 衰变：<br>$$ _1^1 p \to _0^1 n + _1^0 e + \nu $$</li>
+<li>电子俘获：<br>$$ _1^1 p + _{-1}^0 e \to _0^1 n + \nu $$</li>
+</ul>
+</li>
+<li>规律：<ul>
+<li>$\beta^-$ 衰变：<br>$$ _Z^A X \to _{Z+1}^A Y + _{-1}^0 e + \overline{\nu} $$</li>
+<li>$\beta^+$ 衰变：<br>$$ _Z^A X \to _{Z_1}^{A} Y + _1^0 e + \nu $$</li>
+<li>电子俘获：<br>$$ _Z^A X + _{-1}^0 e \to _{Z-1}^{A} Y + \nu $$</li>
+</ul>
+</li>
+</ul>
+<p><strong>$\gamma$ 衰变（跃迁）</strong></p>
+<ul>
+<li>原理：处在激发态的原子核发生跃迁辐射、放出 $\gamma$ 射线退回基态。</li>
+<li>规律：<br>$$ _Z^A X^* \to _Z^A X + \gamma $$</li>
+</ul>
+<p><strong>半衰期</strong><br>定义：放射性元素的原子核有半数发生衰变所需要的时间。是具有统计意义的物理量。<br>$$ T &#x3D; log_{\frac{1}{2}} \frac{n}{m} $$</p>
+<h4 id="核裂变"><a href="#核裂变" class="headerlink" title="核裂变"></a>核裂变</h4><p>定义：重核在一定条件下分裂并放出能量的反应。</p>
+<p><strong>铀核裂变</strong><br>$$ _{92}^{235} U + _0^1 n \to _{56}^{141} Ba + _{36}^{92} Kr + 3 _0^1 n $$<br>$$ \Delta E &#x3D; \Delta m \cdot c^2 &#x3D; 0.2149u \cdot c^2 &#x3D; 200.2MeV $$</p>
+<p><strong>原子弹</strong></p>
+<ul>
+<li>足够的核裂变材料：<ul>
+<li>把铀 $235$ 从 铀 $238$ 中分离出来。</li>
+<li>$ _{94}^{239} Pu $ 也是很好的裂变材料。<br>$$ _{92}^{235} U + _0^1 n \to _{92}^{236} U $$<br>$$ _{92}^{236} \to _{93}^{239} Np + _{-1}^0 e + \overline{\nu} $$<br>$$ _{239}^{93} Np \to _{239}^{94} Pu + _{-1}^0 e + \overline{\nu} $$</li>
+</ul>
+</li>
+<li>在需要的时候引发核裂变：<ul>
+<li>临界体积：能够发生链式反应的铀块的最小体积。</li>
+<li>自发裂变：在 $1g$ 普通铀里，平均每两分钟会有一个铀核发生“自发裂变”。</li>
+</ul>
+</li>
+</ul>
+<p><strong>核电站</strong></p>
+<ul>
+<li>核反应堆：铀棒（燃料）+镉棒（控制棒）+石墨（中子减速器）。</li>
+<li>热能输送系统：水、液态金属钠或空气等流体在反应堆内外循环流动。</li>
+<li>防护措施：修建水泥防护层屏蔽射线；深埋放射性废料。</li>
+</ul>
+<h4 id="核聚变"><a href="#核聚变" class="headerlink" title="核聚变"></a>核聚变</h4><p>定义：轻核在一定条件下聚合成质量较大的核并放出能量反应。</p>
+<p><strong>氢核聚变</strong><br>$$ _1^2 H + _1^2 H \to _2^3 He + _0^1 n + 3.25MeV $$<br>$$ _1^2 H + _1^2 H \to _1^3 H + _1^1 H + 4.00MeV $$<br>$$ _1^3 H + _1^2 H \to _2^4 He + _0^1 n + 17.6MeV $$<br>$$ _2^3 He + _1^2 H \to _4^2 He + _1^1 H + 18.3MeV $$</p>
+<p><strong>应用</strong></p>
+<ul>
+<li>热核反应条件：克服库仑力需要粒子的动能很大，即在强磁场或高温下进行。</li>
+<li>氢弹：利用原子弹爆炸产生的高温：<br>$$ _1^3 H + _1^2 H \to _2^4 He + _0^1 n + 17.6MeV $$</li>
+<li>受控热核反应：高温+约束（磁约束或激光约束）。</li>
+</ul>
+<h2 id="粒子和宇宙"><a href="#粒子和宇宙" class="headerlink" title="粒子和宇宙"></a>粒子和宇宙</h2><h3 id="粒子物理学"><a href="#粒子物理学" class="headerlink" title="粒子物理学"></a>粒子物理学</h3><p><strong>基本粒子</strong><br>定义：构成物质的最小或最基本的单位，在现有科学认知下无法被进一步分割‌。<br>至今发现的粒子总数为$452$种。宇宙射线和粒子加速器是研究基本粒子的重要手段。</p>
+<p><strong>主要内在属性</strong></p>
+<ul>
+<li>质量：光子、中微子和反中微子的静质量均为零。静质量不为零的粒子中，最轻的是电子，最重的是 $Z$ 粒子。</li>
+<li>寿命：即粒子的平均寿命 $\tau$ 。其与半衰期 $T$ 的关系为：<br>$$ T &#x3D; \tau ln 2 \approx 0.693 \tau $$</li>
+<li>电荷：所有已发现的粒子所带电荷的数值都是质子电荷的整数倍。</li>
+<li>自旋：自旋量子数 $J$ 表示粒子的“自转”性质。</li>
+<li>重子数：重子是质子、中子及它们的反粒子和质量超过它们的粒子的总称；轻子是电子、$\mu$ 子和中微子及它们的反粒子则总称。重子的重子数 $B&#x3D;1$,其余粒子 $B&#x3D;0$。</li>
+<li>同位旋：自旋相同、质量相近、仅所带电荷不同的粒子可以看作同一粒子的不同状态。引入同位旋 $I$ 这一量子数和同位旋分量 $I_z$ 来描述这种情况。</li>
+</ul>
+<p>常见粒子的部分性质：</p>
+<table>
+<thead>
+<tr>
+<th align="center">类别</th>
+<th align="center">粒子</th>
+<th align="center">符号</th>
+<th align="center">质量 $&#x2F;MeV$</th>
+<th align="center">电荷 $Q$</th>
+<th align="center">自旋 $J$</th>
+<th align="center">同位旋 $I$</th>
+<th align="center">$I_z$</th>
+<th align="center">寿命 $\tau &#x2F;s$</th>
+<th align="center">反粒子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">规范粒子</td>
+<td align="center">光子</td>
+<td align="center">$\gamma$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$1^{-}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">稳定</td>
+<td align="center">$\gamma$</td>
+</tr>
+<tr>
+<td align="center">轻子</td>
+<td align="center">电子</td>
+<td align="center">$e^{-}$</td>
+<td align="center">$0.511$</td>
+<td align="center">$-1$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">稳定</td>
+<td align="center">$e^{+}$</td>
+</tr>
+<tr>
+<td align="center">强子</td>
+<td align="center">质子</td>
+<td align="center">$p$</td>
+<td align="center">$938.3$</td>
+<td align="center">$+1$</td>
+<td align="center">${\frac{1}{2}}^{+}$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$+ \frac{1}{2}$</td>
+<td align="center">稳定$(&gt;10^{32}a)$</td>
+<td align="center">$\overline{p}$</td>
+</tr>
+<tr>
+<td align="center">强子</td>
+<td align="center">中子</td>
+<td align="center">$n$</td>
+<td align="center">$938.6$</td>
+<td align="center">$0$</td>
+<td align="center">${\frac{1}{2}}^{+}$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$- \frac{1}{2}$</td>
+<td align="center">$898$</td>
+<td align="center">$\overline{n}$</td>
+</tr>
+</tbody></table>
+<p><strong>相互作用</strong><br>四种相互作用：</p>
+<table>
+<thead>
+<tr>
+<th align="center">相互作用</th>
+<th align="center">强度</th>
+<th align="center">力程 $&#x2F;m$</th>
+<th align="center">传递媒介（规范粒子）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">强作用</td>
+<td align="center">$1-10$</td>
+<td align="center">$10^{-15}$</td>
+<td align="center">胶子（待确认）</td>
+</tr>
+<tr>
+<td align="center">电磁作用</td>
+<td align="center">$\frac{1}{137}$</td>
+<td align="center">$\infty$</td>
+<td align="center">光子</td>
+</tr>
+<tr>
+<td align="center">弱作用</td>
+<td align="center">$10^{-13}$</td>
+<td align="center">$&lt;10^{-17}$</td>
+<td align="center">$W^{\underline{+}}, Z^0$</td>
+</tr>
+<tr>
+<td align="center">引力作用</td>
+<td align="center">$10^{-39}$</td>
+<td align="center">$\infty$</td>
+<td align="center">引力子</td>
+</tr>
+</tbody></table>
+<p><strong>夸克模型</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">夸克名称及符号</th>
+<th align="center">$J$</th>
+<th align="center">$Q$</th>
+<th align="center">$I$</th>
+<th align="center">$I_z$</th>
+<th align="center">$B$</th>
+<th align="center">奇异数</th>
+<th align="center">粲数</th>
+<th align="center">底数</th>
+<th align="center">顶数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">上 $u$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$\frac{2}{3}$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$\frac{1}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+</tr>
+<tr>
+<td align="center">下 $d$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$-\frac{1}{3}$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$-\frac{1}{2}$</td>
+<td align="center">$\frac{1}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+</tr>
+<tr>
+<td align="center">奇异$s$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$-\frac{1}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$\frac{1}{3}$</td>
+<td align="center">$-1$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+</tr>
+<tr>
+<td align="center">粲 $c$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$\frac{2}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$\frac{1}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$1$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+</tr>
+<tr>
+<td align="center">底 $b$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$-\frac{1}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$\frac{1}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$-1$</td>
+<td align="center">$0$</td>
+</tr>
+<tr>
+<td align="center">顶 $t$</td>
+<td align="center">$\frac{1}{2}$</td>
+<td align="center">$\frac{2}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$\frac{1}{3}$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$0$</td>
+<td align="center">$1$</td>
+</tr>
+</tbody></table>
+<p>夸克禁闭：无法在实验上直接观察到单独存在的夸克和胶子，只能观察到它们的复合体。</p>
+<h3 id="宇宙学"><a href="#宇宙学" class="headerlink" title="宇宙学"></a>宇宙学</h3><p><strong>宇宙概况</strong></p>
+<ul>
+<li>太阳系：直径不到 $1$ 光年，绝大部分质量都分布在太阳上。<ul>
+<li>太阳：半径为 $7\times 10^{8} m$ ，表面温度高达 $6\times10^3 K$ 的由等离子体组成的球体。核心温度高达 $1.5\times 10^7 K$ ，发生着氢聚变为氦的核反应。</li>
+<li>行星：水金地火（类地行星）木土天海（类木行星）。</li>
+<li>小行星：位于火星和木星的主小行星带，主要由岩石和金属构成的小行星组成；位于海王星轨道外侧的柯伊伯带，包含大量冰质天体（如甲烷、氨、水冰）及矮行星。</li>
+<li>彗星和流星：哈雷彗星周期为 $76$ 年。</li>
+</ul>
+</li>
+<li>银河系：直径约为 $10^5$ 光年，主体银盘的直径约为 $7 \times 10^4$ 光年，最大厚度约为 $10^4$ 光年，像一个中央突起四周扁平的旋转铁饼，由 $1000$ 多亿颗彼此相距很远的恒星组成。<ul>
+<li>太阳系：处在距“铁饼轴”约 $3&#x2F;5$ 半径的地方，以 $2.5 \times 10^5 m&#x2F;s$ 的速度绕“轴”旋转。</li>
+<li>比邻星：离太阳最近的恒星。距太阳约 $4.3$ 光年，为太阳半径的 $6 \times 10^7$ 倍。</li>
+<li>星云：由气体和尘埃所组成的团块。</li>
+</ul>
+</li>
+<li>仙女座星系：距银河系 $2.25 \times 10^6$ 光年，是人类肉眼可见的最远天体。</li>
+<li>星系团：银河系与其他星系组成更大的星系团，星系团的直径约为 $10^7$ 光年。</li>
+<li>在 $10^7$ 光年的尺度以下，物质是成团分布的。</li>
+<li>宇宙学原理：在宇观尺度上（ $10^8$ 光年以上），三维空间在任何时刻都是均匀各向同性的。</li>
+</ul>
+<p><strong>宇宙的起源与演化</strong></p>
+<ul>
+<li>哈勃定律：河外星系的退行速度与它们离银河系中心的距离成正比：<br>$$ v &#x3D; HD $$<br>哈勃常量 $H \approx 7\times 10^4 m \cdot s^{-1} \cdot Mpc^{-1} $。</li>
+<li>微波背景辐射：目前宇宙中普遍存在着温度约为 $2.7K$ 的背景黑体辐射。这种辐射的峰值波长在微波波段的 $1mm$ 附近。微波背景辐射是大爆炸的遗迹。</li>
+<li>大爆炸模型：<ul>
+<li>最初：没有任何元素和天体，只是一碗“宇宙汤”。</li>
+<li>$10^{-44}s$：引力作用分化出来，强、弱、电磁三种作用仍不可区分；夸克和轻子可以互相转变。</li>
+<li>$10^{-36}s$：强作用分化出来；物质和反物质间的不对称性开始出现。</li>
+<li>$10^{-10}s$：弱作用和电磁作用相互分离。</li>
+<li>$3min$：中子和质子的比例降至 $1:6$ 。</li>
+<li>$3min-7\times10^{5}a$：温度降至 $3000K$ ；电子与原子核结合形成稳定原子。</li>
+<li>又过了几十亿年：中性原子在引力的作用下凝聚为原星系，原星系聚在一起形成等级式结构的星系团；原星系本身分裂成千千万万的恒星，恒星依靠核聚变合成重元素；恒星生命即将结束时，通过爆发的形式抛出富含重元素的气体和尘埃，这些气体和尘埃又成为构成新一代恒星的燃料；在某些恒星周围，冷的气尘会坍缩成一个旋转的圆盘，又通过相互吸引碰撞黏合，形成从小行星到大行星的形形色色的天体。</li>
+</ul>
+</li>
+</ul>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+
+    <section id="share">
+      <div class="header"><span>分享文章</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.astroyouth.cn/20250701/%E9%A2%84%E4%B8%80%E7%89%A9%E7%90%86%E6%80%BB%E7%BB%93/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+        
+      </div>
+    </section>
+    </div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/20250701/%E9%AB%98%E4%B8%AD%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/">高中技术大纲</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/20250701/%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93/">高中数学大纲</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/about/">Angelica Yang</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%9B%E5%AD%A6"><span class="toc-text">力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A8%E7%82%B9%E8%BF%90%E5%8A%A8%E5%AD%A6"><span class="toc-text">质点运动学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%80%E5%8F%98%E9%80%9F%E7%9B%B4%E7%BA%BF%E8%BF%90%E5%8A%A8"><span class="toc-text">匀变速直线运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%9B%E4%BD%93%E8%BF%90%E5%8A%A8"><span class="toc-text">抛体运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E8%BF%90%E5%8A%A8"><span class="toc-text">曲线运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%BD%E5%88%A9%E7%95%A5%E5%8F%98%E6%8D%A2"><span class="toc-text">伽利略变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A8%E7%82%B9%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">质点动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E4%B8%89%E5%AE%9A%E5%BE%8B"><span class="toc-text">牛顿三定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A9%E4%BD%93%E8%BF%90%E5%8A%A8"><span class="toc-text">天体运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8A%9B"><span class="toc-text">常见的力</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E5%92%8C%E8%83%BD"><span class="toc-text">功和能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E8%83%BD"><span class="toc-text">动能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%BF%E8%83%BD"><span class="toc-text">势能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E8%83%BD"><span class="toc-text">机械能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E4%BD%93%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%B5%81%E5%8A%A8"><span class="toc-text">流体的稳定流动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E6%B5%81%E4%BD%93"><span class="toc-text">理想流体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E6%B5%81%E4%BD%93"><span class="toc-text">真实流体</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E5%92%8C%E8%A7%92%E5%8A%A8%E9%87%8F"><span class="toc-text">动量和角动量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F"><span class="toc-text">动量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%B0%E6%92%9E"><span class="toc-text">碰撞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E7%A2%B0"><span class="toc-text">正碰</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%86%B2"><span class="toc-text">反冲</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F"><span class="toc-text">角动量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9A%E4%BD%93%E7%9A%84%E8%BF%90%E5%8A%A8%E4%B8%8E%E5%B9%B3%E8%A1%A1"><span class="toc-text">刚体的运动与平衡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%8A%A8"><span class="toc-text">平动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E8%BD%B4%E8%BD%AC%E5%8A%A8"><span class="toc-text">定轴转动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9A%E4%BD%93%E7%9A%84%E5%B9%B3%E8%A1%A1"><span class="toc-text">刚体的平衡</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E6%8C%AF%E5%8A%A8%E5%92%8C%E6%9C%BA%E6%A2%B0%E6%B3%A2"><span class="toc-text">机械振动和机械波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E8%B0%90%E6%8C%AF%E5%8A%A8"><span class="toc-text">简谐振动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E5%B0%BC%E6%8C%AF%E5%8A%A8"><span class="toc-text">阻尼振动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%97%E8%BF%AB%E6%8C%AF%E5%8A%A8"><span class="toc-text">受迫振动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%AF%E5%8A%A8%E7%9A%84%E5%90%88%E6%88%90"><span class="toc-text">振动的合成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E8%B0%90%E6%B3%A2"><span class="toc-text">简谐波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E7%9A%84%E8%A1%8D%E5%B0%84"><span class="toc-text">波的衍射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E7%9A%84%E5%B9%B2%E6%B6%89"><span class="toc-text">波的干涉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%99%AE%E5%8B%92%E6%95%88%E5%BA%94"><span class="toc-text">多普勒效应</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%83%AD%E5%AD%A6"><span class="toc-text">热学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%94%E4%BD%93"><span class="toc-text">气体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93"><span class="toc-text">理想气体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B"><span class="toc-text">状态方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E5%BC%BA"><span class="toc-text">压强</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%83%BD"><span class="toc-text">内能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9F%E7%8E%87%E5%88%86%E5%B8%83"><span class="toc-text">速率分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%AD%90%E8%BF%90%E5%8A%A8"><span class="toc-text">分子运动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E6%B0%94%E4%BD%93"><span class="toc-text">真实气体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8C%83%E5%BE%B7%E7%93%A6%E5%B0%94%E6%96%AF%E6%96%B9%E7%A8%8B"><span class="toc-text">范德瓦尔斯方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E8%BF%90%E7%8E%B0%E8%B1%A1"><span class="toc-text">输运现象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%B6%E4%BD%93"><span class="toc-text">晶体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%B2%E4%BD%93"><span class="toc-text">液体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E9%9D%A2%E7%8E%B0%E8%B1%A1"><span class="toc-text">表面现象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E6%80%81%E5%8F%98%E5%8C%96"><span class="toc-text">物态变化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%94%E5%8C%96%E4%B8%8E%E5%87%9D%E5%9B%BA"><span class="toc-text">熔化与凝固</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%BD%E5%8C%96%E4%B8%8E%E6%B6%B2%E5%8C%96"><span class="toc-text">汽化与液化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E5%8D%8E%E4%B8%8E%E5%87%9D%E5%8D%8E"><span class="toc-text">升华与凝华</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%9B%B8%E7%82%B9"><span class="toc-text">三相点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B9%BF%E5%BA%A6%E4%B8%8E%E9%9C%B2%E7%82%B9"><span class="toc-text">湿度与露点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%AE%9A%E5%BE%8B"><span class="toc-text">热力学定律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E9%9B%B6%E5%AE%9A%E5%BE%8B"><span class="toc-text">热力学第零定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B"><span class="toc-text">热力学第一定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B"><span class="toc-text">热力学第二定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%86%B5"><span class="toc-text">熵</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E5%AD%A6%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">热学的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%BF%87%E7%A8%8B"><span class="toc-text">理想气体热力学过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E8%AF%BA%E5%BE%AA%E7%8E%AF%E5%92%8C%E5%8D%A1%E8%AF%BA%E5%AE%9A%E7%90%86"><span class="toc-text">卡诺循环和卡诺定理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E5%AD%A6"><span class="toc-text">电磁学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E5%9C%BA"><span class="toc-text">电场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E7%9A%84%E7%94%B5%E6%80%A7"><span class="toc-text">物质的电性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%8D%B7%E5%8A%9B"><span class="toc-text">电荷力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%9C%BA-1"><span class="toc-text">电场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%8A%BF"><span class="toc-text">电势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%AF%BC%E4%BD%93"><span class="toc-text">静电场中的导体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AE%B9"><span class="toc-text">电容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%9C%BA%E8%83%BD"><span class="toc-text">电场能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%81%92%E5%AE%9A%E7%94%B5%E6%B5%81"><span class="toc-text">恒定电流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%B5%81"><span class="toc-text">电流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E5%AE%9E%E9%AA%8C%E5%AE%9A%E5%BE%8B"><span class="toc-text">电路实验定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%BA%90"><span class="toc-text">电源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E7%9A%84%E8%83%BD%E9%87%8F"><span class="toc-text">电路的能量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%B5%8B%E9%87%8F"><span class="toc-text">连接与测量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-text">基尔霍夫方程组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E5%9C%BA"><span class="toc-text">磁场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E7%9A%84%E7%A3%81%E6%80%A7"><span class="toc-text">物质的磁性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E5%9C%BA-1"><span class="toc-text">磁场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E5%9C%BA%E5%8A%9B"><span class="toc-text">磁场力</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94"><span class="toc-text">电磁感应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A5%9E%E6%AC%A1%E5%AE%9A%E5%BE%8B"><span class="toc-text">楞次定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E6%8B%89%E7%AC%AC%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94%E5%AE%9A%E5%BE%8B"><span class="toc-text">法拉第电磁感应定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E6%84%9F"><span class="toc-text">自感</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E6%84%9F"><span class="toc-text">互感</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E5%9C%BA%E8%83%BD"><span class="toc-text">磁场能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E6%B5%81%E7%94%B5"><span class="toc-text">交流电</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="toc-text">基本特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F"><span class="toc-text">产生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%83%BD%E7%9A%84%E8%BF%90%E8%BE%93"><span class="toc-text">电能的运输</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E5%8E%8B%E5%99%A8"><span class="toc-text">变压器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%B5%81%E4%B8%8E%E6%BB%A4%E6%B3%A2"><span class="toc-text">整流与滤波</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%B5%81%E7%94%B5%E8%B7%AF"><span class="toc-text">交流电路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%9B%B8%E4%BA%A4%E6%B5%81%E7%94%B5"><span class="toc-text">三相交流电</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E6%8C%AF%E8%8D%A1%E5%92%8C%E7%94%B5%E7%A3%81%E6%B3%A2"><span class="toc-text">电磁振荡和电磁波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LC%E5%9B%9E%E8%B7%AF"><span class="toc-text">LC回路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="toc-text">电磁场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2"><span class="toc-text">电磁波</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">电磁波的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E5%8F%91%E9%80%81%E4%B8%8E%E6%8E%A5%E6%94%B6"><span class="toc-text">电磁波的发送与接收</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E5%AD%A6"><span class="toc-text">光学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6"><span class="toc-text">几何光学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%B0%84"><span class="toc-text">折射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%85%89%E5%AD%A6%E4%BB%AA%E5%99%A8"><span class="toc-text">常见光学仪器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%8A%A8%E5%85%89%E5%AD%A6"><span class="toc-text">波动光学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%9A%84%E5%B9%B2%E6%B6%89"><span class="toc-text">光的干涉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%9A%84%E8%A1%8D%E5%B0%84"><span class="toc-text">光的衍射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%9A%84%E5%81%8F%E6%8C%AF"><span class="toc-text">光的偏振</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%9A%84%E6%95%A3%E5%B0%84"><span class="toc-text">光的散射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E8%B0%B1"><span class="toc-text">光谱</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%91%E4%BB%A3%E7%89%A9%E7%90%86"><span class="toc-text">近代物理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AE%BA"><span class="toc-text">相对论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-text">理论基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AE%BA%E6%97%B6%E7%A9%BA%E8%A7%82"><span class="toc-text">相对论时空观</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2"><span class="toc-text">洛伦兹变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A8%E9%80%9F%E5%85%B3%E7%B3%BB"><span class="toc-text">质速关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E9%87%8F%E4%B8%8E%E8%83%BD%E9%87%8F"><span class="toc-text">动量与能量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-text">广义相对论基础</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%8A%A8%E6%80%A7%E5%92%8C%E7%B2%92%E5%AD%90%E6%80%A7"><span class="toc-text">波动性和粒子性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84%E5%AE%9E%E9%AA%8C"><span class="toc-text">黑体辐射实验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%94%B5%E6%95%88%E5%BA%94"><span class="toc-text">光电效应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E6%B3%A2"><span class="toc-text">物质波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86"><span class="toc-text">原子物理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84"><span class="toc-text">原子结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%BC%8F%E7%BB%93%E6%9E%84%E6%A8%A1%E5%9E%8B"><span class="toc-text">核式结构模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%BB%E5%B0%94%E7%9A%84%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%90%86%E8%AE%BA"><span class="toc-text">玻尔的氢原子理论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BF%80%E5%85%89"><span class="toc-text">激光</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E6%A0%B8"><span class="toc-text">原子核</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BE%E5%B0%84%E6%80%A7%E8%A1%B0%E5%8F%98"><span class="toc-text">放射性衰变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E8%A3%82%E5%8F%98"><span class="toc-text">核裂变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E8%81%9A%E5%8F%98"><span class="toc-text">核聚变</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E5%92%8C%E5%AE%87%E5%AE%99"><span class="toc-text">粒子和宇宙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E7%89%A9%E7%90%86%E5%AD%A6"><span class="toc-text">粒子物理学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%87%E5%AE%99%E5%AD%A6"><span class="toc-text">宇宙学</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+
+<script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

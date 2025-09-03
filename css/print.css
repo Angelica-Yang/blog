@@ -9,9 +9,14 @@
   div#comments,
   section#license,
   section#share,
+  section#references,
   #link-icon,
-  footer {
-    display: none;
+  footer{
+    display: none !important;
+  }
+
+  @page{
+    @top-left { content: none !important; }
   }
   .md-text psw {
     color: unset;
@@ -101,13 +106,13 @@
     position: relative;
   }
   body::after {
-    content: "杨    宁    之";
+    content: "AstroYouth ";
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     font-size: 80px;
